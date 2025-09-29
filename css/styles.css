@@ -43,11 +43,7 @@ table {
   border-collapse: collapse;
 
 }
-# Show poster at the end of the video
-$('video').on('ended',->
-  $('video')[0].autoplay=false
-  $('video')[0].load()
-)
+
 
 thead th:nth-child(1) {
   width: 75%;
@@ -81,3 +77,4 @@ margin-right: auto;
   text-align: left;
 
 }
+
