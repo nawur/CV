@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +49,7 @@
             border-radius: 10px;
             background-color: rgba(255,255,255,0.2);
         }
-        video { max-width: 50%; height: auto; border-radius: 8px; display: block; }
+        video { max-width: 50%; height: auto; border-radius: 8px; }
 
         .header-section { padding: 1rem; text-align: center; }
         .header-section h1 { margin: 0; }
@@ -160,17 +161,25 @@
 
     <!-- About Me & Video -->
     <section id="about">
+        
         <p>I am a dedicated Operations & Support Engineer with over 10 years of customer success experience on various SaaS environments.</p>
         <div class="video-container">
             <h3>Video Intro: 1 min</h3>
-            <div style="position: relative; display: inline-block;">
-                <video id="introVideo" width="50%" controls preload="auto">
-                    <source src="intro_1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <img id="videoPoster" src="thumbnail_2.png" 
-                     style="position: absolute; top: 0; left: 0; width: 100%; height: auto; object-fit: cover; cursor: pointer;">
-            </div>
+            <video width="100%" controls preload="auto" poster="thumbnail_2.png">
+                <source src="intro_1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+       <script>
+    const video = document.getElementById('introVideo');
+
+    // When the video ends
+    video.addEventListener('ended', () => {
+        video.currentTime = 0; // reset to start
+        video.pause();          // pause the video
+        video.load();           // reload to show poster
+    });
+</script>
+            </video>
+            
         </div>
     </section>
 
@@ -186,6 +195,7 @@
                     <td>COMPANY CONFIDENTIAL<br>Leipzig, Germany<br>(Work from Home in Sri-Lanka)</td>
                     <td class="job-title">Operations & Support Engineer</td>
                     <td>Providing technical support under the umbrella of ETL/ELT processes and the virtualization of data by setting-up, configuring, troubleshooting and debugging various eCommerce REST API connectors; and JDBC Drivers from numerous data sources in a SaaS environment.<br><br>Advising, assisting, devising, troubleshooting and debugging SQL procedures and other scripts for clientele to help them retrieve their anticipated datasets.</td>
+</td>
                 </tr>
                 <tr>
                     <td>November 2013 - December 2022</td>
@@ -210,6 +220,7 @@
                     <td>Sagem Communications Austria GmbH<br>Vienna, Austria</td>
                     <td class="job-title">Technical Support</td>
                     <td>Providing customers with dedicated support & solutions on printing and fax devices as well as TV set-top-boxes.</td>
+</td>
                 </tr>
                 <tr>
                     <td>2001 - 2003</td>
@@ -293,26 +304,17 @@
         Photo by <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pawel Czerwinski</a> on <a href="https://unsplash.com">Unsplash</a>
     </div>
 
-    <script>
-        const video = document.getElementById('introVideo');
-        const poster = document.getElementById('videoPoster');
-
-        // Hide poster when video starts
-        video.addEventListener('play', () => {
-            poster.style.display = 'none';
-        });
-
-        // Show poster when video ends
-        video.addEventListener('ended', () => {
-            poster.style.display = 'block';
-        });
-
-        // Click poster to play video
-        poster.addEventListener('click', () => {
-            poster.style.display = 'none';
-            video.play();
-        });
-    </script>
-
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
