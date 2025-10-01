@@ -57,12 +57,13 @@ video { max-width:100%; height:auto; border-radius:8px; }
     display: flex;
     margin-bottom: 2rem;
     align-items: flex-start;
+    position: relative;
 }
 
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: 20px;
+    left: 120px;  /* shifted the vertical line further right */
     top:0;
     bottom:0;
     width:4px;
@@ -74,7 +75,8 @@ video { max-width:100%; height:auto; border-radius:8px; }
     min-width: 180px;
     font-weight: bold;
     color: #2c3e50;
-    margin-right: 1rem;
+    margin-right: 2rem; /* space between date and line */
+    text-align: right; /* align date towards job title */
 }
 
 .timeline-content {
@@ -138,7 +140,8 @@ video { max-width:100%; height:auto; border-radius:8px; }
     nav a { display:block; margin:0.5rem 0; }
     .timeline { padding-left: 0; }
     .timeline-item { flex-direction: column; }
-    .timeline-date { margin-bottom: 0.5rem; }
+    .timeline-date { margin-bottom: 0.5rem; text-align:left; }
+    .timeline-item::before { left: 20px; }
 }
 </style>
 </head>
@@ -303,7 +306,7 @@ video { max-width:100%; height:auto; border-radius:8px; }
 <!-- Contact Section -->
 <section id="contact">
     <h3>Contact</h3>
-    <p>Nationality: Austria <img src="images/austria.png" alt="Austria" class="contact-img"> (European Union)<br>
+    <p>Nationality: Austria<img src="images/austria.png" alt="Austria" class="contact-img"> (European Union)<br>
     Current Address (Sri Lanka): (6.8301° N, 79.8801° E)</p>
     <p>Phone: <a href="tel:+94766981521">+94 766981521</a></p>
     <p>Email: <a href="mailto:rt.ratnayake@gmail.com">rt.ratnayake@gmail.com</a></p>
