@@ -48,7 +48,7 @@
             border-radius: 10px;
             background-color: rgba(255,255,255,0.2);
         }
-        video { max-width: 50%; height: auto; border-radius: 8px; }
+        video { max-width: 50%; height: auto; border-radius: 8px; display: block; }
 
         .header-section { padding: 1rem; text-align: center; }
         .header-section h1 { margin: 0; }
@@ -169,7 +169,7 @@
                     Your browser does not support the video tag.
                 </video>
                 <img id="videoPoster" src="thumbnail_2.png" 
-                     style="position: absolute; top: 0; left: 0; width: 50%; height: auto; object-fit: cover; cursor: pointer;">
+                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
             </div>
         </div>
     </section>
@@ -307,7 +307,7 @@
             poster.style.display = 'block';
         });
 
-        // Click on poster to play video
+        // Click poster to play video
         poster.addEventListener('click', () => {
             poster.style.display = 'none';
             video.play();
