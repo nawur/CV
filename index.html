@@ -17,58 +17,30 @@
         }
         h2, h3 { color: #2c3e50; }
         hr { border: 0; border-top: 1px solid #ccc; margin: 2rem 0; }
-        
-        /* Table container to center and enlarge tables */
         .table-container {
-            width: 100%;
+            width: 110vw;            /* Slightly larger than viewport */
+            margin: 0 -5vw 2rem -5vw; /* Centered with negative margins */
             display: flex;
             justify-content: center;
-            margin-bottom: 2rem;
         }
-
         table {
-            width: 90vw; /* dynamically enlarged table */
-            min-width: 800px;
+            width: 100%;
             border-collapse: collapse;
             background-color: rgba(255, 255, 255, 0.3);
             border-radius: 8px;
             padding: 1rem;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-
         table:hover {
             transform: scale(1.01);
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
-
-        td {
-            vertical-align: top;
-            padding: 1rem;
-        }
-
-        .video-container {
-            width: 100%;
-            text-align: center;
-            margin: 2rem 0;
-            border: 2px solid rgba(255,255,255,0.5);
-            padding: 1rem;
-            border-radius: 10px;
-            background-color: rgba(255,255,255,0.2);
-        }
-
+        td { vertical-align: top; padding: 1rem; }
+        .video-container { width: 100%; text-align: center; margin: 2rem 0; border: 2px solid rgba(255,255,255,0.5); padding: 1rem; border-radius: 10px; background-color: rgba(255,255,255,0.2); }
         video { max-width: 100%; height: auto; border-radius: 8px; }
-
-        .header-section {
-            padding: 1rem;
-            background-color: rgba(255,255,255,0.3);
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
-
+        .header-section { padding: 1rem; background-color: rgba(255,255,255,0.3); text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-radius: 8px; }
         .header-section h1 { margin: 0; }
         .header-section p { margin: 0.3rem 0 0 0; font-size: 0.9rem; color: #555; }
-
         nav {
             position: sticky;
             top: 0;
@@ -79,7 +51,6 @@
             z-index: 1000;
             backdrop-filter: blur(5px);
         }
-
         nav a {
             margin: 0 1rem;
             color: #2c3e50;
@@ -87,13 +58,11 @@
             font-weight: bold;
             transition: color 0.3s, transform 0.3s;
         }
-
         nav a:hover {
             text-decoration: underline;
             color: #1abc9c;
             transform: scale(1.05);
         }
-
         .photo-credit {
             position: fixed;
             bottom: 0.5rem;
@@ -103,12 +72,9 @@
             border-radius: 5px;
             font-size: 0.75rem;
         }
-
         .contact-img { vertical-align: middle; margin-right: 0.5rem; width: 20px; height: auto; }
-
         @media screen and (max-width: 768px) {
-            table { width: 95vw; min-width: auto; margin: 1rem auto; }
-            .video-container { width: 95vw; margin: 1rem auto; }
+            .table-container, .video-container { width: 95vw; margin: 1rem auto; }
             nav a { display: block; margin: 0.5rem 0; }
         }
     </style>
@@ -149,7 +115,7 @@
     <section id="experience" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
         <h3>Work Experience</h3>
         <div class="table-container">
-        <table cellspacing="20%">
+        <table cellspacing="10%">
             <tbody>
                 <tr>
                     <td style="color:green;">December 2022 - Present</td>
@@ -248,7 +214,7 @@
     <section id="languages" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
         <h3>Languages</h3>
         <div class="table-container">
-        <table cellspacing="5%">
+        <table>
             <tbody>
                 <tr>
                     <td>English: Spoken & Written - Native</td>
@@ -265,7 +231,7 @@
     <section id="contact" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
         <h3>Contact</h3>
         <div class="table-container">
-        <table cellspacing="5%">
+        <table>
             <tbody>
                 <tr>
                     <td><img src="images/austria.png" alt="Austria" class="contact-img">Nationality: Austria (European Union)</td>
@@ -283,4 +249,3 @@
 
 </body>
 </html>
-
