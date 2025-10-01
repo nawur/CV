@@ -22,7 +22,8 @@
         td { vertical-align: top; padding: 0.5rem; }
         .video-container { width: 100%; text-align: center; margin: 2rem 0; border: 2px solid rgba(255,255,255,0.5); padding: 1rem; border-radius: 10px; background-color: rgba(255,255,255,0.2); }
         video { max-width: 100%; height: auto; border-radius: 8px; }
-        .header-section { padding: 1rem; background-color: rgba(255,255,255,0.3); text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-radius: 8px; }
+        .header-section { padding: 1rem; background-color: rgba(255,255,255,0.3); text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-radius: 8px; position: sticky; top: 0; z-index: 1000; }
+        .header-section:hover { transform: scale(1.01); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
         .header-section h1 { margin: 0; }
         .header-section p { margin: 0.3rem 0 0 0; font-size: 0.9rem; color: #555; }
         nav {
@@ -56,12 +57,12 @@
             border-radius: 5px;
             font-size: 0.75rem;
         }
-        .contact-img { vertical-align: middle; margin-right: 0.5rem; width: 20px; height: auto; }
+        .contact-img { vertical-align: middle; margin-left: 0.3rem; width: 20px; height: auto; }
+        td b { display: block; margin-bottom: 0.3rem; }
         @media screen and (max-width: 768px) {
             table, .video-container { width: 95%; margin: 1rem auto; }
             nav a { display: block; margin: 0.5rem 0; }
         }
-        b.job-title { font-weight: bold; }
     </style>
 </head>
 <body>
@@ -104,37 +105,37 @@
                 <tr>
                     <td style="color:green;">December 2022 - Present</td>
                     <td>COMPANY CONFIDENTIAL<br>Leipzig, Germany<br>(Work from Home in Sri-Lanka)</td>
-                    <td><b class="job-title">Operations & Support Engineer</b></td>
+                    <td><b>Operations & Support Engineer</b></td>
                     <td>Providing technical support under the umbrella of ETL/ELT processes and the virtualization of data by setting-up, configuring, troubleshooting and debugging various eCommerce REST API connectors; and JDBC Drivers from numerous data sources in a SaaS environment.<br><br>Advising, assisting, devising, troubleshooting and debugging SQL procedures and other scripts for clientele to help them retrieve their anticipated datasets.<br><br>JBoss/WildFly configuration and troubleshooting, JVM GC and heap dump analysis.</td>
                 </tr>
                 <tr>
                     <td>November 2013 - December 2022</td>
                     <td>Odyssee Mobile NV<br>Brussels, Belgium<br>(Work from Home in Sri-Lanka)</td>
-                    <td><b class="job-title">Level 3 HelpDesk</b></td>
+                    <td><b>Level 3 HelpDesk</b></td>
                     <td>Helpdesk & Quality Assurance<br>Primary Role: B2B Helpdesk. Resolving & troubleshooting Odyssee SaaS solutions for customers.<br>Incident Management – bug replication, documentation and escalation to Development.<br>Interaction with Product Owners advocating customer's change requests to meet their business requirements.<br>Database analytics – Querying in SQL to troubleshoot data related problems, and reporting.<br>Secondary Role: Quality Assurance – on User Interface of SaaS Solution for Android, Windows UWP & Website portal.<br>Checking that bugs have been fixed that were reported by Helpdesk.</td>
                 </tr>
                 <tr>
                     <td>2008 - 2009</td>
                     <td>UPC Austria GmbH<br>Vienna, Austria</td>
-                    <td><b class="job-title">Business Intelligence Systems Analyst</b></td>
+                    <td><b>Business Intelligence Systems Analyst</b></td>
                     <td>Translating business needs into analytics/reporting requirements, and interfacing with internal team members to ensure successful delivery of BI reports from different departments.</td>
                 </tr>
                 <tr>
                     <td>2006 - 2008</td>
                     <td>CQR Payment Solutions GmbH,<br>Bwin Group<br>Vienna, Austria</td>
-                    <td><b class="job-title">Jr. Fraud & Risk Analyst</b></td>
+                    <td><b>Jr. Fraud & Risk Analyst</b></td>
                     <td>B2C Gaming platform fraud and risk analytics of gaming clients for various payment platforms.<br>Risk checks applied during the processing of online payments, implementation of anti-fraud and security solutions that help merchants reduce fraud exposure.</td>
                 </tr>
                 <tr>
                     <td>2005 - 2006</td>
                     <td>Sagem Communications Austria GmbH<br>Vienna, Austria</td>
-                    <td><b class="job-title">Technical Support</b></td>
+                    <td><b>Technical Support</b></td>
                     <td>Providing customers with dedicated support & solutions on printing and fax devices as well as TV set-top-boxes.</td>
                 </tr>
                 <tr>
                     <td>2001 - 2003</td>
                     <td>IBM UK Ltd./Lenovo UK Ltd<br>Greenock, UK</td>
-                    <td><b class="job-title">Quality Resolution Owner</b></td>
+                    <td><b>Quality Resolution Owner</b></td>
                     <td>Single-point-of-contact for clients who have been disappointed with IBM's performance in some way and have complained about their experience.<br>Duties included turning complaining clients into loyal IBM clients by being responsive and proactive to meet their needs.</td>
                 </tr>
             </tbody>
@@ -178,10 +179,10 @@
         <table cellspacing="5%">
             <tbody>
                 <tr>
-                    <td><b>Certifications:</b><br>OCA Oracle Certified PL/SQL Developer</td>
-                    <td><b>Applications:</b><br>Zendesk, Asana, Jira, Confluence, Slack, BitBucket, MS-Teams, Zoom, Office</td>
-                    <td><b>OS/Environments/Languages:</b><br>Python, SQL, Windows, Linux, SSH, JBoss/WildFly Application Servers, SSMS, Pycharm, AWS, Azure, HTML/CSS</td>
-                    <td><b>Databases:</b><br>SQL Server, Snowflake, BigQuery, MySql, PostgreSQL</td>
+                    <td><b>Certifications:</b> OCA Oracle Certified PL/SQL Developer</td>
+                    <td><b>Applications:</b> Zendesk, Asana, Jira, Confluence, Slack, BitBucket, MS-Teams, Zoom, Office</td>
+                    <td><b>OS/Environments/Languages:</b> Python, SQL, Windows, Linux, SSH, JBoss/WildFly Application Servers, SSMS, Pycharm, AWS, Azure, HTML/CSS</td>
+                    <td><b>Databases:</b> SQL Server, Snowflake, BigQuery, MySql, PostgreSQL</td>
                 </tr>
             </tbody>
         </table>
@@ -207,8 +208,9 @@
     <!-- Contact -->
     <section id="contact" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
         <h3>Contact</h3>
-        <p><img src="images/austria.png" alt="Austria" class="contact-img">Nationality: Austria (European Union)<br>
-           Current Address (Sri Lanka): (6.8301° N, 79.8801° E)
+        <p>
+            Nationality: Austria <img src="images/austria.png" alt="Austria" class="contact-img">(European Union)<br>
+            Current Address (Sri Lanka): (6.8301° N, 79.8801° E)
         </p>
         <p>Phone: +94 766981521</p>
         <p>Email: <a href="mailto:rt.ratnayake@gmail.com">rt.ratnayake@gmail.com</a></p>
