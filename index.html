@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -160,17 +162,25 @@
 
     <!-- About Me & Video -->
     <section id="about">
+        
         <p>I am a dedicated Operations & Support Engineer with over 10 years of customer success experience on various SaaS environments.</p>
-        
-        <!-- Clickable link -->
-        <a href="#" id="toggleVideo" style="font-weight:bold; color:#2c3e50; text-decoration:underline;">Video Intro: 1 min</a>
-        
-        <!-- Video container initially hidden -->
-        <div class="video-container" id="videoContainer" style="display:none; margin-top:1rem;">
+        <div class="video-container">
+            <h3>Video Intro: 1 min</h3>
             <video width="100%" controls preload="auto" poster="thumbnail_2.png">
                 <source src="intro_1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
+       <script>
+    const video = document.getElementById('introVideo');
+
+    // When the video ends
+    video.addEventListener('ended', () => {
+        video.currentTime = 0; // reset to start
+        video.pause();          // pause the video
+        video.load();           // reload to show poster
+    });
+</script>
             </video>
+            
         </div>
     </section>
 
@@ -186,6 +196,7 @@
                     <td>COMPANY CONFIDENTIAL<br>Leipzig, Germany<br>(Work from Home in Sri-Lanka)</td>
                     <td class="job-title">Operations & Support Engineer</td>
                     <td>Providing technical support under the umbrella of ETL/ELT processes and the virtualization of data by setting-up, configuring, troubleshooting and debugging various eCommerce REST API connectors; and JDBC Drivers from numerous data sources in a SaaS environment.<br><br>Advising, assisting, devising, troubleshooting and debugging SQL procedures and other scripts for clientele to help them retrieve their anticipated datasets.</td>
+</td>
                 </tr>
                 <tr>
                     <td>November 2013 - December 2022</td>
@@ -210,6 +221,7 @@
                     <td>Sagem Communications Austria GmbH<br>Vienna, Austria</td>
                     <td class="job-title">Technical Support</td>
                     <td>Providing customers with dedicated support & solutions on printing and fax devices as well as TV set-top-boxes.</td>
+</td>
                 </tr>
                 <tr>
                     <td>2001 - 2003</td>
@@ -293,22 +305,18 @@
         Photo by <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pawel Czerwinski</a> on <a href="https://unsplash.com">Unsplash</a>
     </div>
 
-    <!-- Video toggle script -->
-    <script>
-        const toggleLink = document.getElementById('toggleVideo');
-        const videoContainer = document.getElementById('videoContainer');
-
-        toggleLink.addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent default link behavior
-            if(videoContainer.style.display === "none") {
-                videoContainer.style.display = "block"; // Show video
-                toggleLink.textContent = "Hide Video"; // Optional: change link text
-            } else {
-                videoContainer.style.display = "none"; // Hide video
-                toggleLink.textContent = "Video Intro: 1 min"; // Reset link text
-            }
-        });
-    </script>
-
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
