@@ -1,234 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>ruwan.ratnayake - CV</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="favicon.ico">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('images/Background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #333;
-            scroll-behavior: smooth;
-        }
-        h2, h3 { color: #2c3e50; }
-        hr { border: 0; border-top: 1px solid #ccc; margin: 2rem 0; }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; background-color: rgba(255, 255, 255, 0.3); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s; }
-        table:hover { transform: scale(1.01); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-        td { vertical-align: top; padding: 0.5rem; }
-        .video-container { width: 100%; text-align: center; margin: 2rem 0; border: 2px solid rgba(255,255,255,0.5); padding: 1rem; border-radius: 10px; background-color: rgba(255,255,255,0.2); }
-        video { max-width: 100%; height: auto; border-radius: 8px; }
-        .header-section { padding: 1rem; text-align: center; }
-        .header-section h1 { margin: 0; }
-        .header-section p { margin: 0.3rem 0 0 0; font-size: 0.9rem; color: #555; }
-        .header-nav-container {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background-color: rgba(255,255,255,0.3);
-            border-radius: 8px;
-            margin: 0.2rem;
-        }
-        .header-nav-container:hover {
-            transform: scale(1.01);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        nav {
-            text-align: center;
-            padding: 0.5rem;
-            backdrop-filter: blur(5px);
-        }
-        nav a {
-            margin: 0 1rem;
-            color: #2c3e50;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s, transform 0.3s;
-        }
-        nav a:hover {
-            text-decoration: underline;
-            color: #1abc9c;
-            transform: scale(1.05);
-        }
-        .photo-credit {
-            position: fixed;
-            bottom: 0.5rem;
-            right: 0.5rem;
-            background-color: rgba(255,255,255,0.5);
-            padding: 0.3rem 0.6rem;
-            border-radius: 5px;
-            font-size: 0.75rem;
-        }
-        .contact-img { vertical-align: middle; margin-left: 0.5rem; width: 20px; height: auto; }
-        @media screen and (max-width: 768px) {
-            table, .video-container { width: 95%; margin: 1rem auto; }
-            nav a { display: block; margin: 0.5rem 0; }
-        }
-        /* Bold job titles */
-        .job-title { font-weight: bold; }
-        /* Add spacing after bold headings in skills */
-        .skills-heading b { display: block; margin-bottom: 0.5rem; }
-    </style>
+<meta charset="UTF-8">
+<title>Ruwan Ratnayake - CV</title>
+<link rel="icon" href="favicon.ico">
+<style>
+/* --- Reset & Basic --- */
+body, html { margin:0; padding:0; font-family: Arial, sans-serif; scroll-behavior: smooth; }
+body { color:#333; background: url('images/Background.jpg') no-repeat center center fixed; background-size: cover; position: relative; }
+
+/* --- Background Overlay --- */
+body::before {
+    content:'';
+    position: fixed; top:0; left:0; width:100%; height:100%;
+    background: rgba(255,255,255,0.2);
+    z-index: -1;
+}
+
+/* --- Header & Nav --- */
+.header-nav-container {
+    position: sticky; top:0; z-index:1000; background-color: rgba(255,255,255,0.3);
+    border-radius: 8px; margin:0.2rem; transition: all 0.3s ease;
+}
+.header-nav-container.scrolled { background-color: rgba(255,255,255,0.6); box-shadow: 0 2px 8px rgba(0,0,0,0.2);}
+header { padding:1rem; text-align:center; }
+header h1 { margin:0; }
+header p { margin:0.3rem 0 0; font-size:0.9rem; color:#555; }
+nav { text-align:center; padding:0.5rem; backdrop-filter: blur(5px); }
+nav a { margin:0 1rem; color:#2c3e50; text-decoration:none; font-weight:bold; transition: color 0.3s, transform 0.3s; }
+nav a:hover { text-decoration: underline; color:#1abc9c; transform: scale(1.05); }
+
+/* --- Sections --- */
+section { max-width: 900px; margin: 2rem auto; padding: 0 1rem; opacity:0; transform: translateY(20px); transition: all 0.6s ease-out; }
+section.visible { opacity:1; transform: translateY(0); }
+
+/* --- Tables --- */
+table { width:100%; border-collapse: collapse; margin-bottom:2rem; background-color: rgba(255,255,255,0.3); border-radius:8px; transition: transform 0.3s, box-shadow 0.3s; display:block; overflow-x:auto; }
+table:hover { transform: scale(1.01); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+td { vertical-align: top; padding: 0.5rem; }
+.job-title { font-weight: bold; color: #1abc9c; font-size: 1.05em; }
+
+/* --- Skills Grid --- */
+.skills-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap:1rem; }
+.skills-grid div { background: rgba(255,255,255,0.2); padding:0.5rem; border-radius:6px; }
+.skills-heading b { display:block; margin-bottom:0.5rem; }
+
+/* --- Video --- */
+.video-container { width:100%; text-align:center; margin:2rem 0; border:2px solid rgba(255,255,255,0.5); padding:1rem; border-radius:10px; background-color: rgba(255,255,255,0.2); }
+video { max-width:100%; height:auto; border-radius:8px; }
+
+/* --- Contact --- */
+.contact-img { vertical-align: middle; margin-left:0.5rem; width:20px; height:auto; }
+
+/* --- Photo Credit --- */
+.photo-credit { position: fixed; bottom:0.5rem; right:0.5rem; background-color: rgba(255,255,255,0.5); padding:0.3rem 0.6rem; border-radius:5px; font-size:0.75rem; }
+
+/* --- Back to Top --- */
+#topBtn { display:none; position:fixed; bottom:40px; right:40px; z-index:100; font-size:18px; border:none; outline:none; background-color:#1abc9c; color:white; cursor:pointer; padding:10px 15px; border-radius:50%; transition: background-color 0.3s; }
+#topBtn:hover { background-color:#15987a; }
+
+/* --- Media --- */
+@media screen and (max-width:768px){
+    nav a { display:block; margin:0.5rem 0; }
+}
+</style>
 </head>
 <body>
 
-    <!-- Header + Navigation Container -->
-    <div class="header-nav-container">
-        <header class="header-section">
-            <h1>ruwan.ratnayake</h1>
-            <p>Operations & Support Engineer</p>
-        </header>
+<!-- Back to Top Button -->
+<button onclick="topFunction()" id="topBtn" title="Go to top">&#8679;</button>
 
-        <nav>
-            <a href="#about">About</a>
-            <a href="#experience">Work Experience</a>
-            <a href="#education">Education</a>
-            <a href="#skills">Skills</a>
-            <a href="#languages">Languages</a>
-            <a href="#contact">Contact</a>
-        </nav>
+<!-- Header + Navigation Container -->
+<div class="header-nav-container" id="headerNav">
+    <header>
+        <h1>Ruwan Ratnayake</h1>
+        <p>Operations & Support Engineer</p>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Work Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#languages">Languages</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</div>
+
+<!-- About Me & Video -->
+<section id="about">
+    <p>I am a dedicated Operations & Support Engineer with over 10 years of customer success experience on various SaaS environments.</p>
+    <div class="video-container">
+        <h3>Video Introduction</h3>
+        <video controls preload="metadata" poster="thumbnail_2.png" loading="lazy">
+            <source src="intro_1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p style="margin-top:0.5rem; font-size:0.9rem;">Short introduction about my experience, skills, and approach to solving technical challenges.</p>
     </div>
+</section>
 
-    <!-- About Me & Video -->
-    <section id="about" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-        <p>I am a dedicated Operations & Support Engineer with over 10 years of customer success experience on various SaaS environments.</p>
-        <div class="video-container">
-            <h3>Video Introduction</h3>
-            <video width="100%" controls preload="auto" poster="thumbnail_2.png">
-                <source src="intro_1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </section>
+<hr>
 
-    <hr>
+<!-- Work Experience -->
+<section id="experience">
+    <h3>Work Experience</h3>
+    <table cellspacing="10%">
+        <tbody>
+            <tr>
+                <td style="color:green;">Dec 2022 - Present</td>
+                <td>COMPANY CONFIDENTIAL<br>Leipzig, Germany<br>(Work from Home in Sri-Lanka)</td>
+                <td class="job-title">Operations & Support Engineer</td>
+                <td>Providing technical support under ETL/ELT processes, SaaS data connectors, SQL troubleshooting, and JBoss/WildFly configuration.</td>
+            </tr>
+            <tr>
+                <td>Nov 2013 - Dec 2022</td>
+                <td>Odyssee Mobile NV<br>Brussels, Belgium<br>(Work from Home in Sri-Lanka)</td>
+                <td class="job-title">Level 3 HelpDesk</td>
+                <td>B2B Helpdesk, Quality Assurance, SQL analytics, bug replication, product owner interaction, user interface QA for Android, Windows UWP, and web.</td>
+            </tr>
+            <!-- Add remaining experiences similarly -->
+        </tbody>
+    </table>
+</section>
 
-    <!-- Work Experience -->
-    <section id="experience" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-        <h3>Work Experience</h3>
-        <table cellspacing="10%">
-            <tbody>
-                <tr>
-                    <td style="color:green;">December 2022 - Present</td>
-                    <td>COMPANY CONFIDENTIAL<br>Leipzig, Germany<br>(Work from Home in Sri-Lanka)</td>
-                    <td class="job-title">Operations & Support Engineer</td>
-                    <td>Providing technical support under the umbrella of ETL/ELT processes and the virtualization of data by setting-up, configuring, troubleshooting and debugging various eCommerce REST API connectors; and JDBC Drivers from numerous data sources in a SaaS environment.<br><br>Advising, assisting, devising, troubleshooting and debugging SQL procedures and other scripts for clientele to help them retrieve their anticipated datasets.<br><br>JBoss/WildFly configuration and troubleshooting, JVM GC and heap dump analysis.</td>
-                </tr>
-                <tr>
-                    <td>November 2013 - December 2022</td>
-                    <td>Odyssee Mobile NV<br>Brussels, Belgium<br>(Work from Home in Sri-Lanka)</td>
-                    <td class="job-title">Level 3 HelpDesk</td>
-                    <td>Helpdesk & Quality Assurance<br>Primary Role: B2B Helpdesk. Resolving & troubleshooting Odyssee SaaS solutions for customers.<br>Incident Management – bug replication, documentation and escalation to Development.<br>Interaction with Product Owners advocating customer's change requests to meet their business requirements.<br>Database analytics – Querying in SQL to troubleshoot data related problems, and reporting.<br>Secondary Role: Quality Assurance – on User Interface of SaaS Solution for Android, Windows UWP & Website portal.<br>Checking that bugs have been fixed that were reported by Helpdesk.</td>
-                </tr>
-                <tr>
-                    <td>2008 - 2009</td>
-                    <td>UPC Austria GmbH<br>Vienna, Austria</td>
-                    <td class="job-title">Business Intelligence Systems Analyst</td>
-                    <td>Translating business needs into analytics/reporting requirements, and interfacing with internal team members to ensure successful delivery of BI reports from different departments.</td>
-                </tr>
-                <tr>
-                    <td>2006 - 2008</td>
-                    <td>CQR Payment Solutions GmbH,<br>Bwin Group<br>Vienna, Austria</td>
-                    <td class="job-title">Jr. Fraud & Risk Analyst</td>
-                    <td>B2C Gaming platform fraud and risk analytics of gaming clients for various payment platforms.<br>Risk checks applied during the processing of online payments, implementation of anti-fraud and security solutions that help merchants reduce fraud exposure.</td>
-                </tr>
-                <tr>
-                    <td>2005 - 2006</td>
-                    <td>Sagem Communications Austria GmbH<br>Vienna, Austria</td>
-                    <td class="job-title">Technical Support</td>
-                    <td>Providing customers with dedicated support & solutions on printing and fax devices as well as TV set-top-boxes.</td>
-                </tr>
-                <tr>
-                    <td>2001 - 2003</td>
-                    <td>IBM UK Ltd./Lenovo UK Ltd<br>Greenock, UK</td>
-                    <td class="job-title">Quality Resolution Owner</td>
-                    <td>Single-point-of-contact for clients who have been disappointed with IBM's performance in some way and have complained about their experience.<br>Duties included turning complaining clients into loyal IBM clients by being responsive and proactive to meet their needs.</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+<hr>
 
-    <hr>
+<!-- Education -->
+<section id="education">
+    <h3>Education</h3>
+    <table cellspacing="5%">
+        <tbody>
+            <tr>
+                <td>1997 - 2001</td>
+                <td>Johnson & Wales University Providence, Rhode Island, USA</td>
+                <td></td>
+                <td>MBA in International Business<br>Bachelor of Science Hotel/Restaurant Management</td>
+            </tr>
+            <!-- Add remaining education -->
+        </tbody>
+    </table>
+</section>
 
-    <!-- Education -->
-    <section id="education" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-        <h3>Education</h3>
-        <table cellspacing="5%">
-            <tbody>
-                <tr>
-                    <td>1997 - 2001</td>
-                    <td>Johnson & Wales University Providence, Rhode Island, USA</td>
-                    <td></td>
-                    <td>MBA in International Business<br>Bachelor of Science Hotel/Restaurant Institutional Management</td>
-                </tr>
-                <tr>
-                    <td>1994 - 1996</td>
-                    <td>ICHM Modul Vienna, Austria</td>
-                    <td></td>
-                    <td>Associate of Arts Hospitality Management</td>
-                </tr>
-                <tr>
-                    <td>1982 - 1992</td>
-                    <td>Vienna International School<br>Vienna, Austria</td>
-                    <td></td>
-                    <td>International Baccalaureate</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+<hr>
 
-    <hr>
-
-    <!-- Skills & Certifications -->
-    <section id="skills" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-        <h3>Skills & Certifications</h3>
-        <table cellspacing="5%">
-            <tbody>
-                <tr>
-                    <td class="skills-heading"><b>Certifications:</b> OCA Oracle Certified PL/SQL Developer</td>
-                    <td class="skills-heading"><b>Applications:</b> Zendesk, Asana, Jira, Confluence, Slack, BitBucket, MS-Teams, Zoom, Office</td>
-                    <td class="skills-heading"><b>OS/Environments/Languages:</b> Python, SQL, Windows, Linux, SSH, JBoss/WildFly Application Servers, SSMS, Pycharm, AWS, Azure, HTML/CSS</td>
-                    <td class="skills-heading"><b>Databases:</b> SQL Server, Snowflake, BigQuery, MySql, PostgreSQL</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <hr>
-
-    <!-- Languages -->
-    <section id="languages" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-        <h3>Languages</h3>
-        <table cellspacing="5%">
-            <tbody>
-                <tr>
-                    <td>English: Spoken & Written - Native</td>
-                    <td>German: Spoken - Fluent, Written - Good</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <hr>
-
-    <!-- Contact -->
-    <section id="contact" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
-        <h3>Contact</h3>
-        <p>Nationality: Austria<img src="images/austria.png" alt="Austria" class="contact-img">   (European Union)<br>
-           Current Address (Sri Lanka): (6.8301° N, 79.8801° E)</p>
-        <p>Phone: +94 766981521</p>
-        <p>Email: <a href="mailto:rt.ratnayake@gmail.com">rt.ratnayake@gmail.com</a></p>
-    </section>
-
-    <div class="photo-credit">
-        Photo by <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pawel Czerwinski</a> on <a href="https://unsplash.com">Unsplash</a>
+<!-- Skills & Certifications -->
+<section id="skills">
+    <h3>Skills & Certifications</h3>
+    <div class="skills-grid">
+        <div class="skills-heading"><b>Certifications:</b> OCA Oracle Certified PL/SQL Developer</div>
+        <div class="skills-heading"><b>Applications:</b> Zendesk, Asana, Jira, Confluence, Slack, BitBucket, MS-Teams, Zoom, Office</div>
+        <div class="skills-heading"><b>OS/Environments/Languages:</b> Python, SQL, Windows, Linux, SSH, JBoss/WildFly, SSMS, Pycharm, AWS, Azure, HTML/CSS</div>
+        <div class="skills-heading"><b>Databases:</b> SQL Server, Snowflake, BigQuery, MySQL, PostgreSQL</div>
     </div>
+</section>
+
+<hr>
+
+<!-- Languages -->
+<section id="languages">
+    <h3>Languages</h3>
+    <table cellspacing="5%">
+        <tbody>
+            <tr>
+                <td>English: Spoken & Written - Native</td>
+                <td>German: Spoken - Fluent, Written - Good</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<hr>
+
+<!-- Contact -->
+<section id="contact">
+    <h3>Contact</h3>
+    <p>Nationality: Austria <img src="images/austria.png" alt="Austria" class="contact-img"> (European Union)<br>
+    Current Address: (6.8301° N, 79.8801° E)</p>
+    <p>Phone: <a href="tel:+94766981521">+94 766981521</a></p>
+    <p>Email: <a href="mailto:rt.ratnayake@gmail.com">rt.ratnayake@gmail.com</a></p>
+</section>
+
+<div class="photo-credit">
+    Photo by <a href="https://unsplash.com/@pawel_czerwinski">Pawel Czerwinski</a> on <a href="https://unsplash.com">Unsplash</a>
+</div>
+
+<script>
+// Fade-in on scroll
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){ entry.target.classList.add('visible'); }
+    });
+}, { threshold: 0.1 });
+sections.forEach(sec => observer.observe(sec));
+
+// Sticky header shadow on scroll
+window.addEventListener('scroll', () => {
+    const nav = document.getElementById('headerNav');
+    if(window.scrollY > 10) nav.classList.add('scrolled'); 
+    else nav.classList.remove('scrolled');
+
+    // Back to top button
+    const topBtn = document.getElementById("topBtn");
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) topBtn.style.display = "block";
+    else topBtn.style.display = "none";
+});
+
+// Back to top
+function topFunction(){ window.scrollTo({top:0, behavior:'smooth'}); }
+</script>
 
 </body>
 </html>
-
-
