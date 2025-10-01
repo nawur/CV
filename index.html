@@ -17,9 +17,10 @@
         }
         h2, h3 { color: #2c3e50; }
         hr { border: 0; border-top: 1px solid #ccc; margin: 2rem 0; }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; background-color: rgba(255, 255, 255, 0.3); border-radius: 8px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; background-color: rgba(255, 255, 255, 0.3); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s; }
+        table:hover { transform: scale(1.01); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
         td { vertical-align: top; padding: 0.5rem; }
-        .video-container { width: 100%; text-align: center; margin: 2rem 0; }
+        .video-container { width: 100%; text-align: center; margin: 2rem 0; border: 2px solid rgba(255,255,255,0.5); padding: 1rem; border-radius: 10px; background-color: rgba(255,255,255,0.2); }
         video { max-width: 100%; height: auto; border-radius: 8px; }
         .header-section { padding: 1rem; background-color: rgba(255,255,255,0.3); text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-radius: 8px; }
         .header-section h1 { margin: 0; }
@@ -32,6 +33,7 @@
             text-align: center;
             border-radius: 8px;
             z-index: 1000;
+            backdrop-filter: blur(5px);
         }
         nav a {
             margin: 0 1rem;
@@ -55,6 +57,10 @@
             font-size: 0.75rem;
         }
         .contact-img { vertical-align: middle; margin-right: 0.5rem; width: 20px; height: auto; }
+        @media screen and (max-width: 768px) {
+            table, .video-container { width: 95%; margin: 1rem auto; }
+            nav a { display: block; margin: 0.5rem 0; }
+        }
     </style>
 </head>
 <body>
@@ -204,4 +210,3 @@
 
 </body>
 </html>
-
