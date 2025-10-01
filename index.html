@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Ruwan Ratnayake - CV</title>
+<title>ruwan.ratnayake - CV</title>
 <link rel="icon" href="favicon.ico">
 <style>
 /* --- Fonts & Reset --- */
@@ -27,77 +27,61 @@ body::before {
     position: sticky; top:0; z-index:1000;
     background-color: rgba(255,255,255,0.3);
     border-radius: 8px; margin:0.2rem;
-    transition: all 0.3s ease;
 }
 header { padding:1rem; text-align:center; }
-header h1 { margin:0; color:#2c3e50; font-family: Arial, sans-serif; }
-header p { margin:0.3rem 0 0; font-size:0.9rem; color:#555; font-family: Arial, sans-serif; }
-nav { text-align:center; padding:0.5rem; backdrop-filter: blur(5px); font-family: Arial, sans-serif; }
-nav a { margin:0 1rem; color:#2c3e50; text-decoration:none; font-weight:bold; transition: color 0.3s, transform 0.3s; font-family: Arial, sans-serif; }
+header h1 { margin:0; color:#2c3e50; font-family: Arial, sans-serif; text-transform: lowercase; }
+header p { margin:0.3rem 0 0; font-size:0.9rem; color:#555; }
+nav { text-align:center; padding:0.5rem; backdrop-filter: blur(5px); }
+nav a { margin:0 1rem; color:#2c3e50; text-decoration:none; font-weight:bold; transition: color 0.3s, transform 0.3s; }
 nav a:hover { text-decoration: underline; color:#1abc9c; transform: scale(1.05); }
 
 /* --- Sections --- */
 section {
     max-width: 1200px; 
     margin: 2rem auto; padding: 0 1rem;
-    font-family: Arial, sans-serif;
 }
 
 /* --- Video --- */
-.video-container { width:100%; text-align:center; margin:2rem 0; border:2px solid rgba(255,255,255,0.5); padding:1rem; border-radius:10px; background-color: rgba(255,255,255,0.2); font-family: Arial, sans-serif; }
+.video-container { width:100%; text-align:center; margin:2rem 0; border:2px solid rgba(255,255,255,0.5); padding:1rem; border-radius:10px; background-color: rgba(255,255,255,0.2); }
 video { max-width:100%; height:auto; border-radius:8px; }
 
 /* --- Timeline --- */
 .timeline {
-    position: relative;
+    display: flex;
+    flex-direction: column;
     margin: 2rem 0;
-    padding-left: 40px;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: #1abc9c;
-    border-radius: 2px;
+    position: relative;
 }
 
 .timeline-item {
-    position: relative;
+    display: flex;
     margin-bottom: 2rem;
+    align-items: flex-start;
 }
 
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: 12px;
-    background: #fff;
-    border: 4px solid #1abc9c;
-    border-radius: 50%;
-    width: 16px;
-    height: 16px;
-    top: 0;
+    left: 20px;
+    top:0;
+    bottom:0;
+    width:4px;
+    background: #555; /* dark grey line */
+    border-radius: 2px;
 }
 
 .timeline-date {
+    min-width: 180px;
     font-weight: bold;
-    margin-bottom: 0.3rem;
     color: #2c3e50;
+    margin-right: 1rem;
 }
 
 .timeline-content {
     background: rgba(255,255,255,0.3);
     padding: 1rem;
     border-radius: 8px;
-    margin-left: 40px;
-}
-
-.timeline-content h4 {
-    margin-top: 0;
-    color: #2c3e50;
+    flex:1;
 }
 
 /* --- Skills Grid --- */
@@ -152,8 +136,9 @@ video { max-width:100%; height:auto; border-radius:8px; }
 /* --- Responsive --- */
 @media screen and (max-width:768px){
     nav a { display:block; margin:0.5rem 0; }
-    .timeline { padding-left: 20px; }
-    .timeline-content { margin-left: 30px; }
+    .timeline { padding-left: 0; }
+    .timeline-item { flex-direction: column; }
+    .timeline-date { margin-bottom: 0.5rem; }
 }
 </style>
 </head>
@@ -162,7 +147,7 @@ video { max-width:100%; height:auto; border-radius:8px; }
 <!-- Header + Navigation -->
 <div class="header-nav-container">
     <header>
-        <h1>Ruwan Ratnayake</h1>
+        <h1>ruwan.ratnayake</h1>
         <p>Operations & Support Engineer</p>
     </header>
     <nav>
@@ -198,7 +183,7 @@ video { max-width:100%; height:auto; border-radius:8px; }
             <div class="timeline-content">
                 <h4>Operations & Support Engineer</h4>
                 <p><strong>COMPANY CONFIDENTIAL</strong><br>Leipzig, Germany (Work from Home in Sri-Lanka)</p>
-                <p>Providing technical support under ETL/ELT processes and virtualization of data by setting-up, configuring, troubleshooting and debugging various eCommerce REST API connectors; and JDBC Drivers from numerous data sources in a SaaS environment.</p>
+                <p>Providing technical support under the umbrella of ETL/ELT processes and the virtualization of data by setting-up, configuring, troubleshooting and debugging various eCommerce REST API connectors; and JDBC Drivers from numerous data sources in a SaaS environment.</p>
                 <p>Advising, assisting, devising, troubleshooting and debugging SQL procedures and other scripts for clientele to help them retrieve their anticipated datasets.</p>
                 <p>JBoss/WildFly configuration and troubleshooting, JVM GC and heap dump analysis.</p>
             </div>
@@ -208,7 +193,7 @@ video { max-width:100%; height:auto; border-radius:8px; }
             <div class="timeline-content">
                 <h4>Level 3 HelpDesk</h4>
                 <p><strong>Odyssee Mobile NV</strong><br>Brussels, Belgium (Work from Home in Sri-Lanka)</p>
-                <p>Primary Role: B2B Helpdesk. Resolving & troubleshooting Odyssee SaaS solutions for customers. Incident Management – bug replication, documentation and escalation to Development. Interaction with Product Owners advocating customer's change requests. Database analytics – Querying in SQL to troubleshoot data related problems and reporting. Secondary Role: Quality Assurance on User Interface of SaaS Solution for Android, Windows UWP & Website portal. Checking that bugs have been fixed that were reported by Helpdesk.</p>
+                <p>Helpdesk & Quality Assurance<br>Primary Role: B2B Helpdesk. Resolving & troubleshooting Odyssee SaaS solutions for customers.<br>Incident Management – bug replication, documentation and escalation to Development.<br>Interaction with Product Owners advocating customer's change requests to meet their business requirements.<br>Database analytics – Querying in SQL to troubleshoot data related problems, and reporting.<br>Secondary Role: Quality Assurance – on User Interface of SaaS Solution for Android, Windows UWP & Website portal.<br>Checking that bugs have been fixed that were reported by Helpdesk.</p>
             </div>
         </div>
         <div class="timeline-item">
@@ -224,7 +209,7 @@ video { max-width:100%; height:auto; border-radius:8px; }
             <div class="timeline-content">
                 <h4>Jr. Fraud & Risk Analyst</h4>
                 <p><strong>CQR Payment Solutions GmbH, Bwin Group</strong><br>Vienna, Austria</p>
-                <p>B2C Gaming platform fraud and risk analytics of gaming clients for various payment platforms. Risk checks applied during online payment processing; implementation of anti-fraud and security solutions to reduce merchant fraud exposure.</p>
+                <p>B2C Gaming platform fraud and risk analytics of gaming clients for various payment platforms.<br>Risk checks applied during the processing of online payments, implementation of anti-fraud and security solutions that help merchants reduce fraud exposure.</p>
             </div>
         </div>
         <div class="timeline-item">
@@ -240,7 +225,7 @@ video { max-width:100%; height:auto; border-radius:8px; }
             <div class="timeline-content">
                 <h4>Quality Resolution Owner</h4>
                 <p><strong>IBM UK Ltd./Lenovo UK Ltd</strong><br>Greenock, UK</p>
-                <p>Single-point-of-contact for clients disappointed with IBM's performance. Duties included turning complaining clients into loyal IBM clients by being responsive and proactive.</p>
+                <p>Single-point-of-contact for clients who have been disappointed with IBM's performance in some way and have complained about their experience.<br>Duties included turning complaining clients into loyal IBM clients by being responsive and proactive to meet their needs.</p>
             </div>
         </div>
     </div>
@@ -297,7 +282,7 @@ video { max-width:100%; height:auto; border-radius:8px; }
         </div>
         <div class="skill-card">
             <h4>Databases</h4>
-            <p>SQL Server, Snowflake, BigQuery, MySQL, PostgreSQL</p>
+            <p>SQL Server, Snowflake, BigQuery, MySql, PostgreSQL</p>
         </div>
     </div>
 </section>
@@ -308,8 +293,8 @@ video { max-width:100%; height:auto; border-radius:8px; }
 <section id="languages">
     <h3>Languages</h3>
     <div class="languages-grid">
-        <div class="language-badge">English - Native</div>
-        <div class="language-badge">German - Fluent (Spoken), Good (Written)</div>
+        <div class="language-badge">English: Spoken & Written - Native</div>
+        <div class="language-badge">German: Spoken - Fluent, Written - Good</div>
     </div>
 </section>
 
@@ -319,7 +304,7 @@ video { max-width:100%; height:auto; border-radius:8px; }
 <section id="contact">
     <h3>Contact</h3>
     <p>Nationality: Austria <img src="images/austria.png" alt="Austria" class="contact-img"> (European Union)<br>
-    Current Address: (6.8301° N, 79.8801° E)</p>
+    Current Address (Sri Lanka): (6.8301° N, 79.8801° E)</p>
     <p>Phone: <a href="tel:+94766981521">+94 766981521</a></p>
     <p>Email: <a href="mailto:rt.ratnayake@gmail.com">rt.ratnayake@gmail.com</a></p>
 </section>
