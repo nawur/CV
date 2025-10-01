@@ -14,29 +14,40 @@
             background-size: cover;
             color: #333;
             scroll-behavior: smooth;
+            text-align: center; /* centers inline content */
         }
         h2, h3 { color: #2c3e50; }
         hr { border: 0; border-top: 1px solid #ccc; margin: 2rem 0; }
 
         /* Enlarged tables without scaling fonts */
         table {
-            width: 130%;                    /* make table 30% wider */
-            margin: 2rem auto;               /* center it */
+            width: 130%;
+            max-width: 1200px;             /* prevent overly wide tables */
+            margin: 2rem auto;             /* center horizontally */
             border-collapse: collapse;
             background-color: rgba(255, 255, 255, 0.3);
             border-radius: 8px;
             transition: box-shadow 0.3s;
+            text-align: left;              /* keep table text aligned left */
         }
         table:hover {
             box-shadow: 0 6px 16px rgba(0,0,0,0.2);
         }
         td {
             vertical-align: top;
-            padding: 1rem 1.2rem;           /* more breathing room */
-            font-size: 1rem;                /* keep font unchanged */
+            padding: 1rem 1.2rem;
+            font-size: 1rem;
         }
 
-        .video-container { width: 100%; text-align: center; margin: 2rem 0; border: 2px solid rgba(255,255,255,0.5); padding: 1rem; border-radius: 10px; background-color: rgba(255,255,255,0.2); }
+        .video-container {
+            width: 100%;
+            text-align: center;
+            margin: 2rem auto;
+            border: 2px solid rgba(255,255,255,0.5);
+            padding: 1rem;
+            border-radius: 10px;
+            background-color: rgba(255,255,255,0.2);
+        }
         video { max-width: 100%; height: auto; border-radius: 8px; }
 
         .header-section { padding: 1rem; text-align: center; }
@@ -85,7 +96,7 @@
         .contact-img { vertical-align: middle; margin-left: 0.5rem; width: 20px; height: auto; }
 
         @media screen and (max-width: 768px) {
-            table { width: 95%; margin: 1rem auto; } /* reset size on small screens */
+            table { width: 95%; margin: 1rem auto; }
             nav a { display: block; margin: 0.5rem 0; }
         }
 
@@ -98,6 +109,7 @@
             flex-wrap: wrap;
             gap: 1rem;
             margin-top: 1rem;
+            justify-content: center; /* center skills cards */
         }
         .skill-card {
             background: rgba(255,255,255,0.3);
@@ -105,12 +117,24 @@
             border-radius: 8px;
             flex: 1 1 220px;
             transition: transform 0.3s, box-shadow 0.3s;
+            max-width: 300px;
         }
         .skill-card:hover {
             transform: scale(1.03);
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
         .skill-card b { display: block; margin-bottom: 0.5rem; }
+
+        /* Center all sections */
+        section {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            text-align: left; /* keep text itself aligned left */
+        }
+        section h3 {
+            text-align: center; /* but section headers centered */
+        }
     </style>
 </head>
 <body>
@@ -133,7 +157,7 @@
     </div>
 
     <!-- About Me & Video -->
-    <section id="about" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <section id="about">
         <p>I am a dedicated Operations & Support Engineer with over 10 years of customer success experience on various SaaS environments.</p>
         <div class="video-container">
             <h3>Video Introduction</h3>
@@ -147,9 +171,9 @@
     <hr>
 
     <!-- Work Experience -->
-    <section id="experience" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <section id="experience">
         <h3>Work Experience</h3>
-        <table cellspacing="10%">
+        <table>
             <tbody>
                 <tr>
                     <td style="color:green;">December 2022 - Present</td>
@@ -194,9 +218,9 @@
     <hr>
 
     <!-- Education -->
-    <section id="education" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <section id="education">
         <h3>Education</h3>
-        <table cellspacing="5%">
+        <table>
             <tbody>
                 <tr>
                     <td>1997 - 2001</td>
@@ -223,7 +247,7 @@
     <hr>
 
     <!-- Skills & Certifications -->
-    <section id="skills" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <section id="skills">
         <h3>Skills & Certifications</h3>
         <div class="skills-grid">
             <div class="skill-card" style="background-color: #fff3b0;"><b>Certifications:</b> OCA Oracle Certified PL/SQL Developer</div>
@@ -236,9 +260,9 @@
     <hr>
 
     <!-- Languages -->
-    <section id="languages" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <section id="languages">
         <h3>Languages</h3>
-        <table cellspacing="5%">
+        <table>
             <tbody>
                 <tr>
                     <td>English: Spoken & Written - Native</td>
@@ -251,7 +275,7 @@
     <hr>
 
     <!-- Contact -->
-    <section id="contact" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+    <section id="contact">
         <h3>Contact</h3>
         <p>Nationality: Austria<img src="images/austria.png" alt="Austria" class="contact-img">   (European Union)<br>
            Current Address (Sri Lanka): (6.8301° N, 79.8801° E)</p>
