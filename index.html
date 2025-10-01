@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,9 +50,15 @@
         }
         video { max-width: 50%; height: auto; border-radius: 8px; }
 
-        .header-section { padding: 1rem; text-align: center; }
-        .header-section h1 { margin: 0; }
-        .header-section p { margin: 0.3rem 0 0 0; font-size: 0.9rem; color: #555; }
+        /* Updated header layout */
+        .header-section { 
+            padding: 1rem; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        }
+        .header-section h1 { margin: 0; text-align: left; }
+        .header-section p { margin: 0; font-size: 0.9rem; color: #555; text-align: right; }
 
         .header-nav-container {
             position: sticky;
@@ -99,6 +104,8 @@
         @media screen and (max-width: 768px) {
             table { width: 95%; margin: 1rem auto; }
             nav a { display: block; margin: 0.5rem 0; }
+            .header-section { flex-direction: column; text-align: center; }
+            .header-section p { text-align: center; margin-top: 0.3rem; }
         }
 
         /* Bold job titles */
@@ -161,25 +168,13 @@
 
     <!-- About Me & Video -->
     <section id="about">
-        
         <p>I am a dedicated Operations & Support Engineer with over 10 years of customer success experience on various SaaS environments.</p>
         <div class="video-container">
             <h3>Video Intro: 1 min</h3>
             <video width="100%" controls preload="auto" poster="thumbnail_2.png">
                 <source src="intro_1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
-       <script>
-    const video = document.getElementById('introVideo');
-
-    // When the video ends
-    video.addEventListener('ended', () => {
-        video.currentTime = 0; // reset to start
-        video.pause();          // pause the video
-        video.load();           // reload to show poster
-    });
-</script>
             </video>
-            
         </div>
     </section>
 
@@ -195,7 +190,6 @@
                     <td>COMPANY CONFIDENTIAL<br>Leipzig, Germany<br>(Work from Home in Sri-Lanka)</td>
                     <td class="job-title">Operations & Support Engineer</td>
                     <td>Providing technical support under the umbrella of ETL/ELT processes and the virtualization of data by setting-up, configuring, troubleshooting and debugging various eCommerce REST API connectors; and JDBC Drivers from numerous data sources in a SaaS environment.<br><br>Advising, assisting, devising, troubleshooting and debugging SQL procedures and other scripts for clientele to help them retrieve their anticipated datasets.</td>
-</td>
                 </tr>
                 <tr>
                     <td>November 2013 - December 2022</td>
@@ -220,7 +214,6 @@
                     <td>Sagem Communications Austria GmbH<br>Vienna, Austria</td>
                     <td class="job-title">Technical Support</td>
                     <td>Providing customers with dedicated support & solutions on printing and fax devices as well as TV set-top-boxes.</td>
-</td>
                 </tr>
                 <tr>
                     <td>2001 - 2003</td>
@@ -306,15 +299,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
