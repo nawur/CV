@@ -10,9 +10,10 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: url('images/Background.jpg') no-repeat center center fixed;
+            background: url('Background.jpg') no-repeat center center fixed;
             background-size: cover;
             color: #333;
+            scroll-behavior: smooth;
         }
         h2, h3 { color: #2c3e50; }
         hr { border: 0; border-top: 1px solid #ccc; margin: 2rem 0; }
@@ -23,9 +24,37 @@
         .header-section { padding: 1rem; background-color: rgba(255,255,255,0.3); text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border-radius: 8px; }
         .header-section h1 { margin: 0; }
         .header-section p { margin: 0.3rem 0 0 0; font-size: 0.9rem; color: #555; }
-        nav { background-color: rgba(255,255,255,0.3); padding: 0.5rem; text-align: center; border-radius: 8px; margin: 1rem 0; }
-        nav a { margin: 0 1rem; color: #2c3e50; text-decoration: none; font-weight: bold; }
-        nav a:hover { text-decoration: underline; }
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255,255,255,0.8);
+            padding: 0.5rem;
+            text-align: center;
+            border-radius: 8px;
+            z-index: 1000;
+        }
+        nav a {
+            margin: 0 1rem;
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+        nav a:hover {
+            text-decoration: underline;
+            color: #1abc9c;
+            transform: scale(1.05);
+        }
+        .photo-credit {
+            position: fixed;
+            bottom: 0.5rem;
+            right: 0.5rem;
+            background-color: rgba(255,255,255,0.5);
+            padding: 0.3rem 0.6rem;
+            border-radius: 5px;
+            font-size: 0.75rem;
+        }
+        .contact-img { vertical-align: middle; margin-right: 0.5rem; width: 20px; height: auto; }
     </style>
 </head>
 <body>
@@ -164,11 +193,14 @@
     <!-- Contact -->
     <section id="contact" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
         <h3>Contact</h3>
-        <p>Nationality: Austria (European Union)</p>
+        <p><img src="images/austria.png" alt="Austria" class="contact-img">Nationality: Austria (European Union)</p>
         <p>Phone: +94 766981521</p>
         <p>Email: <a href="mailto:rt.ratnayake@gmail.com">rt.ratnayake@gmail.com</a></p>
     </section>
 
+    <div class="photo-credit">
+        Photo by <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pawel Czerwinski</a> on <a href="https://unsplash.com">Unsplash</a>
+    </div>
+
 </body>
 </html>
-
