@@ -17,7 +17,14 @@
         }
         h2, h3 { color: #2c3e50; }
         hr { border: 0; border-top: 1px solid #ccc; margin: 2rem 0; }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; background-color: rgba(255, 255, 255, 0.3); border-radius: 8px; transition: transform 0.3s, box-shadow 0.3s; }
+        table { 
+            width: 80%; /* widened from 100% */
+            border-collapse: collapse; 
+            margin: 2rem auto; /* centers tables horizontally */
+            background-color: rgba(255, 255, 255, 0.3); 
+            border-radius: 8px; 
+            transition: transform 0.3s, box-shadow 0.3s; 
+        }
         table:hover { transform: scale(1.01); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
         td { vertical-align: top; padding: 0.5rem; }
         .video-container { width: 100%; text-align: center; margin: 2rem 0; border: 2px solid rgba(255,255,255,0.5); padding: 1rem; border-radius: 10px; background-color: rgba(255,255,255,0.2); }
@@ -191,7 +198,14 @@
     <!-- Languages -->
     <section id="languages" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
         <h3>Languages</h3>
-        <p>English: Spoken & Written - Native<br>German: Spoken - Fluent, Written - Good</p>
+        <table cellspacing="5%">
+            <tbody>
+                <tr>
+                    <td>English: Spoken & Written - Native</td>
+                    <td>German: Spoken - Fluent, Written - Good</td>
+                </tr>
+            </tbody>
+        </table>
     </section>
 
     <hr>
