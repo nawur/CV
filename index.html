@@ -20,9 +20,18 @@ td { vertical-align: top; padding:1rem 1.2rem; font-size:1rem;}
 td.job-title { font-weight:bold; cursor:pointer; color:#2c3e50; text-decoration:underline; }
 .video-container { width:100%; text-align:center; margin:2rem auto; border-radius:10px; background-color: rgba(255,255,255,0.2); padding:1rem; }
 video { max-width:50%; height:auto; border-radius:8px; }
-.header-section { padding:1rem; text-align:center;}
-.header-section h1 {margin:0;}
-.header-section p {margin:0.3rem 0 0 0; font-size:0.9rem; color:#555;}
+.header-section { padding:1rem; text-align:right;}
+.header-section h1 {
+    margin:0;
+    font-weight: bold;
+    text-align: right;
+}
+.header-section p {
+    margin:0.3rem 0 0 0;
+    font-size:0.9rem;
+    color:#555;
+    text-align: right;
+}
 .header-nav-container { position:sticky; top:0; z-index:1000; background-color: rgba(255,255,255,0.3); border-radius:8px; margin:0.2rem; }
 nav { text-align:center; padding:0.5rem; backdrop-filter:blur(5px); }
 nav a { margin:0 1rem; color:#2c3e50; text-decoration:none; font-weight:bold; transition: color 0.3s, transform 0.3s; }
@@ -58,8 +67,8 @@ section h3 { text-align:left; }
     width: 90%;
     max-width: 600px;
     text-align: left;
-    color: #111; /* darker text */
-    text-shadow: 0 1px 2px rgba(0,0,0,0.2); /* subtle shadow */
+    color: #111;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
     animation: slideDown 0.3s ease;
     position: relative;
 }
@@ -268,6 +277,3 @@ modals.forEach(modal => {
 
 </body>
 </html>
-
-
-
