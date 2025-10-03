@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Ratnayake-CV/Lebenslauf/Resume</title>
+<title>Ruwan Ratnayake - CV</title>
 <link rel="icon" href="images/favicon.ico">
 <style>
 body {
@@ -193,12 +193,9 @@ videoLink.addEventListener('click', () => {
     }
 });
 
-// Reset video at end
+// Pause at end without reset
 video.addEventListener('ended', () => {
     video.pause();
-    const src = video.currentSrc;
-    video.src = src;
-    video.load();
 });
 
 // Modal functionality
