@@ -47,7 +47,7 @@ section h3 { text-align:left; }
     width: 100%;
     height: 100%;
     overflow: auto;
-    background: rgba(0,0,0,0.6) url('images/Background.jpg') center center / cover no-repeat;
+    background: rgba(0,0,0,0.6);
     animation: fadeIn 0.3s;
 }
 .modal-content {
@@ -58,12 +58,18 @@ section h3 { text-align:left; }
     width: 90%;
     max-width: 600px;
     text-align: left;
-    color: #222;
+    color: #111; /* darker text */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2); /* subtle shadow */
     animation: slideDown 0.3s ease;
     position: relative;
 }
 .modal-content h4 { margin-top:0; }
-.modal-content .meta { font-size:0.9rem; color:#555; margin-bottom:1rem; }
+.modal-content .meta {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 1rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
 .close { color:#aaa; position:absolute; top:10px; right:20px; font-size:28px; font-weight:bold; cursor:pointer; }
 .close:hover { color:#1abc9c; }
 @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
@@ -190,7 +196,7 @@ Your browser does not support the video tag.
 <div class="modal-content"><span class="close">&times;</span>
 <h4>Resolution Owner</h4>
 <div class="meta">2001 - 2003 | Greenock, UK</div>
-<p>Single-point-of-contact for clients who have been disappointed with IBM's performance in some way and have complained. Duties included turning complaining clients into loyal IBM clients by being responsive and proactive to meet their needs.</p>
+<p>Single-point-of-contact for clients who have been disappointed with IBM's performance. Duties included turning complaining clients into loyal IBM clients by being responsive and proactive.</p>
 </div>
 </div>
 
@@ -201,28 +207,12 @@ Your browser does not support the video tag.
 <h3>Education</h3>
 <table>
 <tbody>
-<tr>
-<td>1997 - 2001</td>
-<td>Johnson & Wales University Providence, Rhode Island, USA</td>
-<td></td>
-<td>MBA in International Business<br>Bachelor of Science in Hotel/Restaurant Institutional Management</td>
-</tr>
-<tr>
-<td>1994 - 1996</td>
-<td>ICHM Modul Vienna, Austria</td>
-<td></td>
-<td>Associate of Arts in Hospitality Management</td>
-</tr>
-<tr>
-<td>1982 - 1992</td>
-<td>Vienna International School<br>Vienna, Austria</td>
-<td></td>
-<td>International Baccalaureate</td>
-</tr>
+<tr><td>1997-2001</td><td>Johnson & Wales University Providence, Rhode Island, USA</td><td></td><td>MBA in International Business<br>Bachelor of Science in Hotel/Restaurant Institutional Management</td></tr>
+<tr><td>1994-1996</td><td>ICHM Modul Vienna, Austria</td><td></td><td>Associate of Arts in Hospitality Management</td></tr>
+<tr><td>1982-1992</td><td>Vienna International School, Austria</td><td></td><td>International Baccalaureate</td></tr>
 </tbody>
 </table>
 </section>
-<hr>
 
 <!-- Skills -->
 <section id="skills">
@@ -234,21 +224,16 @@ Your browser does not support the video tag.
 <div class="skill-card"><b>Databases:</b> SQL Server, Snowflake, BigQuery, MySQL, MariaDB, PostgreSQL</div>
 </div>
 </section>
-<hr>
 
 <!-- Languages -->
 <section id="languages">
 <h3>Languages</h3>
 <table>
 <tbody>
-<tr>
-<td>English: Spoken & Written - Native</td>
-<td>German: Spoken - Fluent, Written - Good</td>
-</tr>
+<tr><td>English: Spoken & Written - Native</td><td>German: Spoken - Fluent, Written - Good</td></tr>
 </tbody>
 </table>
 </section>
-<hr>
 
 <!-- Contact -->
 <section id="contact">
@@ -258,28 +243,26 @@ Your browser does not support the video tag.
 <p>Email: <a href="mailto:rt.ratnayake@gmail.com">rt.ratnayake@gmail.com</a></p>
 </section>
 
-<div class="photo-credit">
-Photo by <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pawel Czerwinski</a> on <a href="https://unsplash.com">Unsplash</a>
-</div>
+<div class="photo-credit">Photo by <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pawel Czerwinski</a> on <a href="https://unsplash.com">Unsplash</a></div>
 
 <script>
 // Video reset
 const video = document.getElementById('introVideo');
-video.addEventListener('ended', ()=>{ video.currentTime=0; video.pause(); video.load(); });
+video.addEventListener('ended', () => { video.currentTime=0; video.pause(); video.load(); });
 
 // Modal functionality
 const jobRows = document.querySelectorAll('.job-row');
 const modals = document.querySelectorAll('.modal');
 jobRows.forEach(row => {
-    row.addEventListener('click', ()=> {
+    row.addEventListener('click', () => {
         const jobId = row.dataset.job;
-        document.getElementById(jobId).style.display='block';
+        document.getElementById(jobId).style.display = 'block';
     });
 });
 modals.forEach(modal => {
     const close = modal.querySelector('.close');
-    close.addEventListener('click', ()=> { modal.style.display='none'; });
-    modal.addEventListener('click', e => { if(e.target===modal) modal.style.display='none'; });
+    close.addEventListener('click', () => { modal.style.display = 'none'; });
+    modal.addEventListener('click', e => { if(e.target === modal) modal.style.display = 'none'; });
 });
 </script>
 
