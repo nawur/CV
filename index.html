@@ -38,11 +38,33 @@ section h3 { text-align:left; }
 @media screen and (max-width:768px){ table { width:95%; margin:1rem auto;} nav a { display:block; margin:0.5rem 0; } }
 
 /* Modal Styles */
-.modal { display:none; position:fixed; z-index:2000; left:0; top:0; width:100%; height:100%; overflow:auto; background-color: rgba(0,0,0,0.6); animation: fadeIn 0.3s; }
-.modal-content { background-color:#fefefe; margin:10% auto; padding:2rem; border-radius:10px; width:90%; max-width:600px; text-align:left; color:#222; animation: slideDown 0.3s ease; position:relative; }
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.6) url('images/Background.jpg') center center / cover no-repeat;
+    animation: fadeIn 0.3s;
+}
+.modal-content {
+    background-color: rgba(255,255,255,0.95);
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    text-align: left;
+    color: #222;
+    animation: slideDown 0.3s ease;
+    position: relative;
+}
 .modal-content h4 { margin-top:0; }
 .modal-content .meta { font-size:0.9rem; color:#555; margin-bottom:1rem; }
-.close { color:#aaa; position:absolute; top:10px; right:20px; font-size:28px; font-weight:bold; cursor:pointer;}
+.close { color:#aaa; position:absolute; top:10px; right:20px; font-size:28px; font-weight:bold; cursor:pointer; }
 .close:hover { color:#1abc9c; }
 @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
 @keyframes slideDown { from{transform:translateY(-20px);} to{transform:translateY(0);} }
@@ -168,90 +190,98 @@ Your browser does not support the video tag.
 <div class="modal-content"><span class="close">&times;</span>
 <h4>Resolution Owner</h4>
 <div class="meta">2001 - 2003 | Greenock, UK</div>
-<p>Single-point-of-contact for clients who have been disappointed with IBM's performance. Turning complaining clients into loyal IBM clients by being responsive and proactive to meet their needs.</p>
+<p>Single-point-of-contact for clients who have been disappointed with IBM's performance in some way and have complained. Duties included turning complaining clients into loyal IBM clients by being responsive and proactive to meet their needs.</p>
 </div>
 </div>
+
+<hr>
 
 <!-- Education -->
 <section id="education">
 <h3>Education</h3>
 <table>
-<tr><td>1997-2001</td><td>Johnson & Wales University, Rhode Island, USA</td><td></td><td>MBA International Business / BSc Hotel Management</td></tr>
-<tr><td>1994-1996</td><td>ICHM Modul Vienna, Austria</td><td></td><td>Associate of Arts in Hospitality Management</td></tr>
-<tr><td>1982-1992</td><td>Vienna International School, Austria</td><td></td><td>International Baccalaureate</td></tr>
+<tbody>
+<tr>
+<td>1997 - 2001</td>
+<td>Johnson & Wales University Providence, Rhode Island, USA</td>
+<td></td>
+<td>MBA in International Business<br>Bachelor of Science in Hotel/Restaurant Institutional Management</td>
+</tr>
+<tr>
+<td>1994 - 1996</td>
+<td>ICHM Modul Vienna, Austria</td>
+<td></td>
+<td>Associate of Arts in Hospitality Management</td>
+</tr>
+<tr>
+<td>1982 - 1992</td>
+<td>Vienna International School<br>Vienna, Austria</td>
+<td></td>
+<td>International Baccalaureate</td>
+</tr>
+</tbody>
 </table>
 </section>
+<hr>
 
 <!-- Skills -->
 <section id="skills">
 <h3>Skills & Certifications</h3>
 <div class="skills-grid">
 <div class="skill-card" style="background-color:#fff3b0;"><b>Certification:</b> OCA Oracle Certified PL/SQL Developer</div>
-<div class="skill-card"><b>Applications:</b> Zendesk, Asana, Jira, Confluence, Slack, MS Teams, Zoom, Office</div>
-<div class="skill-card"><b>OS/Env/Languages:</b> SQL, Windows, Linux, SSH, WildFly, SSMS, Pycharm, AWS, Azure, HTML/CSS</div>
+<div class="skill-card"><b>Applications:</b> Zendesk, Asana, Jira, Confluence, Slack, MS-Teams, Zoom, Office</div>
+<div class="skill-card"><b>OS/Environments/Languages:</b> SQL, Windows, Linux, SSH, WildFly, SSMS, Pycharm, AWS, Azure, HTML/CSS</div>
 <div class="skill-card"><b>Databases:</b> SQL Server, Snowflake, BigQuery, MySQL, MariaDB, PostgreSQL</div>
 </div>
 </section>
+<hr>
 
 <!-- Languages -->
 <section id="languages">
 <h3>Languages</h3>
 <table>
+<tbody>
 <tr>
 <td>English: Spoken & Written - Native</td>
 <td>German: Spoken - Fluent, Written - Good</td>
 </tr>
+</tbody>
 </table>
 </section>
+<hr>
 
 <!-- Contact -->
 <section id="contact">
 <h3>Contact</h3>
-<p>Nationality: Austria<img src="images/austria.png" alt="Austria" class="contact-img"> (European Union)<br>
-Currently based in Sri Lanka</p>
+<p>Nationality: Austria <img src="images/austria.png" class="contact-img"> (European Union)<br>Currently based in Sri Lanka</p>
 <p>Phone: +94 766981521</p>
 <p>Email: <a href="mailto:rt.ratnayake@gmail.com">rt.ratnayake@gmail.com</a></p>
 </section>
 
 <div class="photo-credit">
-Photo by <a href="https://unsplash.com/@pawel_czerwinski">Pawel Czerwinski</a> on <a href="https://unsplash.com">Unsplash</a>
+Photo by <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pawel Czerwinski</a> on <a href="https://unsplash.com">Unsplash</a>
 </div>
 
 <script>
 // Video reset
 const video = document.getElementById('introVideo');
-video.addEventListener('ended', () => {
-    video.currentTime = 0;
-    video.pause();
-    video.load();
-});
+video.addEventListener('ended', ()=>{ video.currentTime=0; video.pause(); video.load(); });
 
 // Modal functionality
-const modalElements = document.querySelectorAll('.modal');
 const jobRows = document.querySelectorAll('.job-row');
-
+const modals = document.querySelectorAll('.modal');
 jobRows.forEach(row => {
-    row.addEventListener('click', () => {
-        const modalId = row.dataset.job;
-        document.getElementById(modalId).style.display = 'block';
+    row.addEventListener('click', ()=> {
+        const jobId = row.dataset.job;
+        document.getElementById(jobId).style.display='block';
     });
 });
-
-document.querySelectorAll('.close').forEach(el => {
-    el.addEventListener('click', () => {
-        el.closest('.modal').style.display = 'none';
-    });
+modals.forEach(modal => {
+    const close = modal.querySelector('.close');
+    close.addEventListener('click', ()=> { modal.style.display='none'; });
+    modal.addEventListener('click', e => { if(e.target===modal) modal.style.display='none'; });
 });
-
-window.onclick = function(event) {
-    modalElements.forEach(modal => {
-        if(event.target == modal) {
-            modal.style.display = 'none';
-        }
-    });
-};
 </script>
 
 </body>
 </html>
-
