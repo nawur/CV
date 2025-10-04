@@ -20,14 +20,14 @@
   h1 { font-family: 'Poppins', sans-serif; font-weight: 700; letter-spacing: -0.5px; font-size: 2.8rem; color: #2c3e50; }
   h2, h3 { font-family: 'Poppins', sans-serif; font-weight: 600; color: #2c3e50; margin-bottom: 0.6rem; }
   p, td, .modal-content, nav a { font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif; font-size: 1rem; color: #444; }
-  
+
   section h3 { font-size: 1.6rem; border-bottom: 2px solid #1abc9c; display: inline-block; padding-bottom: 0.2rem; }
   hr {border:0; border-top:1px solid #ccc; margin:2rem 0;}
   table { width:100%; max-width:1200px; margin:2rem auto; border-collapse:collapse; background-color: rgba(255,255,255,0.3); border-radius:8px; text-align:left; }
   td { vertical-align: top; padding:1rem 1.2rem; font-size:1rem; }
   td.job-title { text-align: left; }
 
-  /* Buttons: Same as Download CV button */
+  /* Buttons */
   td.job-title button,
   .header-section a {
       font-family: 'Poppins', sans-serif;
@@ -69,44 +69,45 @@
       filter: drop-shadow(0 0 15px rgba(26, 188, 156, 0.5));
   }
 
-  /* Vertical navigation & header layout */
-  .header-nav-container {
+  /* Header layout */
+  .header-section {
     display: flex;
-    align-items: flex-start;
-    gap: 2rem;
-    padding: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: rgba(255,255,255,0.1);
-    border-radius: 8px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: 0 1rem;
+    text-align: left;
   }
+  .header-left { order: 1; }  /* Download CV button */
+  .header-right { order: 2; text-align:right; } /* Name & title */
 
+  /* Sticky vertical nav at footer-left */
   nav {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
+    gap: 0.8rem;
+    background-color: rgba(255,255,255,0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
     backdrop-filter: blur(5px);
+    z-index: 1000;
   }
-
   nav a {
-    margin: 0.5rem 0;
     color: #2c3e50;
     text-decoration: none;
     font-weight: 500;
     letter-spacing: 0.3px;
     transition: color 0.3s, transform 0.3s;
   }
-
   nav a:hover {
     color: #1abc9c;
     transform: scale(1.05);
     text-decoration: underline;
   }
-
-  .header-section { text-align:left; }
-  .header-section a { margin-bottom: 1rem; display:inline-block; }
 
   .photo-credit { position: fixed; bottom:0.5rem; right:0.5rem; background-color: rgba(255,255,255,0.5); padding:0.3rem 0.6rem; border-radius:5px; font-size:0.75rem; }
   .contact-img { vertical-align:middle; margin-left:0.5rem; width:20px; }
@@ -120,10 +121,8 @@
   #languages b { font-weight: bold; }
 
   @media screen and (max-width:768px){
-    .header-nav-container { flex-direction: column; align-items:center; }
-    nav { flex-direction: row; justify-content:center; flex-wrap:wrap; }
+    nav { position: static; flex-direction: row; justify-content:center; margin:1rem 0; }
     nav a { margin:0.5rem 1rem; }
-    table { width:95%; margin:1rem auto;}
   }
 
   .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background: rgba(0,0,0,0.6); animation: fadeIn 0.3s; }
@@ -138,22 +137,26 @@
 </head>
 <body>
 
-<div class="header-nav-container">
-  <nav>
-    <a href="#about">Video</a>
-    <a href="#experience">Work Experience</a>
-    <a href="#education">Education</a>
-    <a href="#skills">Skills</a>
-    <a href="#languages">Languages</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <header class="header-section">
+<!-- Header -->
+<header class="header-section">
+  <div class="header-left">
     <a href="Ruwan Ratnayake - CV.pdf" download>Download CV</a>
+  </div>
+  <div class="header-right">
     <h1 style="margin:0;">ruwan.ratnayake</h1>
     <p style="margin:0.3rem 0 0 0; font-size:1.1rem; color:#555;">Operations & Support Engineer</p>
-  </header>
-</div>
+  </div>
+</header>
+
+<!-- Sticky Vertical Nav -->
+<nav>
+  <a href="#about">Video</a>
+  <a href="#experience">Work Experience</a>
+  <a href="#education">Education</a>
+  <a href="#skills">Skills</a>
+  <a href="#languages">Languages</a>
+  <a href="#contact">Contact</a>
+</nav>
 
 <!-- About -->
 <section id="about" style="text-align:center;">
@@ -316,40 +319,26 @@
 
 <div class="photo-credit">Photo by <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pawel Czerwinski</a> on <a href="https://unsplash.com">Unsplash</a></div>
 
+<!-- JS for modals -->
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  var modals = document.querySelectorAll(".modal");
-  var buttons = document.querySelectorAll(".job-title button");
-  var closes = document.querySelectorAll(".close");
-
-  buttons.forEach(function(btn) {
-    btn.addEventListener("click", function() {
-      var jobId = this.closest(".job-row").dataset.job;
-      document.getElementById(jobId).style.display = "block";
+  document.querySelectorAll('td.job-title button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const id = btn.closest('tr').dataset.job;
+      document.getElementById(id).style.display='block';
     });
   });
 
-  closes.forEach(function(close) {
-    close.addEventListener("click", function() {
-      this.closest(".modal").style.display = "none";
+  document.querySelectorAll('.close').forEach(span=>{
+    span.addEventListener('click', ()=>{
+      span.closest('.modal').style.display='none';
     });
   });
 
-  window.addEventListener("click", function(event) {
-    modals.forEach(function(modal) {
-      if (event.target == modal) { modal.style.display = "none"; }
-    });
-  });
-
-  const video = document.getElementById('introVideo');
-  const poster = video.getAttribute('poster');
-  video.addEventListener('ended', () => {
-    video.pause();
-    video.currentTime = 0;
-    video.load();                  
-    video.setAttribute('poster', poster);
-  });
-});
+  window.onclick = function(event) {
+    if(event.target.classList.contains('modal')) {
+      event.target.style.display='none';
+    }
+  }
 </script>
 
 </body>
