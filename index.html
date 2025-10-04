@@ -16,8 +16,26 @@ body {
 h2,h3 {color:#2c3e50;}
 hr {border:0; border-top:1px solid #ccc; margin:2rem 0;}
 table { width:100%; max-width:1200px; margin:2rem auto; border-collapse:collapse; background-color: rgba(255,255,255,0.3); border-radius:8px; text-align:left; }
-td { vertical-align: top; padding:1rem 1.2rem; font-size:1rem;}
-td.job-title { font-weight:bold; cursor:pointer; color:#2c3e50; text-decoration:underline; }
+td { vertical-align: top; padding:1rem 1.2rem; font-size:1rem; }
+
+/* Job Title Buttons */
+td.job-title button {
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
+    background: #1abc9c;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.2s;
+}
+td.job-title button:hover {
+    background: #16a085;
+    transform: scale(1.05);
+}
+
 .video-container { width:100%; text-align:center; margin:2rem auto; border-radius:10px; background-color: rgba(255,255,255,0.2); padding:1rem; }
 video { max-width:50%; height:auto; border-radius:8px; }
 .header-section { padding:1rem; text-align:center;}
@@ -59,8 +77,8 @@ section h3 { text-align:left; }
     width: 90%;
     max-width: 600px;
     text-align: left;
-    color: #111; /* darker text */
-    text-shadow: 0 1px 2px rgba(0,0,0,0.2); /* subtle shadow */
+    color: #111;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
     animation: slideDown 0.3s ease;
     position: relative;
 }
@@ -115,37 +133,37 @@ Your browser does not support the video tag.
 <tr class="job-row" data-job="job1">
 <td style="color:red;">Dec 2022 - Present</td>
 <td>Company name (withheld)<br>Leipzig, Germany<br>(Remote – Sri Lanka)</td>
-<td class="job-title">Operations & Support Engineer</td>
+<td class="job-title"><button>Operations & Support Engineer</button></td>
 <td>Click to view details</td>
 </tr>
 <tr class="job-row" data-job="job2">
 <td>Nov 2013 - Dec 2022</td>
 <td>Odyssee Mobile NV (aka Wello Solutions)<br>Brussels, Belgium<br>(Remote – Sri Lanka)</td>
-<td class="job-title">L3 HelpDesk</td>
+<td class="job-title"><button>L3 HelpDesk</button></td>
 <td>Click to view details</td>
 </tr>
 <tr class="job-row" data-job="job3">
 <td>2008 - 2009</td>
 <td>UPC Telekabel Wien GmbH<br>Vienna, Austria</td>
-<td class="job-title">Business Intelligence Systems Analyst</td>
+<td class="job-title"><button>Business Intelligence Systems Analyst</button></td>
 <td>Click to view details</td>
 </tr>
 <tr class="job-row" data-job="job4">
 <td>2006 - 2008</td>
 <td>CQR Payment Solutions GmbH, Bwin Group<br>Vienna, Austria</td>
-<td class="job-title">Jr. Fraud & Risk Analyst</td>
+<td class="job-title"><button>Jr. Fraud & Risk Analyst</button></td>
 <td>Click to view details</td>
 </tr>
 <tr class="job-row" data-job="job5">
 <td>2005 - 2006</td>
 <td>Sagem Communications Austria GmbH<br>Vienna, Austria</td>
-<td class="job-title">Technical Support</td>
+<td class="job-title"><button>Technical Support</button></td>
 <td>Click to view details</td>
 </tr>
 <tr class="job-row" data-job="job6">
 <td>2001 - 2003</td>
 <td>IBM UK Ltd./Lenovo UK Ltd<br>Greenock, (Scotland) UK</td>
-<td class="job-title">Resolution Owner</td>
+<td class="job-title"><button>Resolution Owner</button></td>
 <td>Click to view details</td>
 </tr>
 </tbody>
@@ -244,8 +262,6 @@ Your browser does not support the video tag.
 <p>Email: <a href="mailto:rt.ratnayake@gmail.com">rt.ratnayake@gmail.com</a></p>
 </section>
 
-
-
 <div class="photo-credit">Photo by <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pawel Czerwinski</a> on <a href="https://unsplash.com">Unsplash</a></div>
 
 <script>
@@ -254,11 +270,12 @@ const video = document.getElementById('introVideo');
 video.addEventListener('ended', () => { video.currentTime=0; video.pause(); video.load(); });
 
 // Modal functionality
-const jobRows = document.querySelectorAll('.job-row');
+const jobButtons = document.querySelectorAll('.job-row .job-title button');
 const modals = document.querySelectorAll('.modal');
-jobRows.forEach(row => {
-    row.addEventListener('click', () => {
-        const jobId = row.dataset.job;
+jobButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const jobId = button.closest('.job-row').dataset.job;
         document.getElementById(jobId).style.display = 'block';
     });
 });
@@ -271,18 +288,3 @@ modals.forEach(modal => {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
