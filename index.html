@@ -69,30 +69,28 @@
       filter: drop-shadow(0 0 15px rgba(26, 188, 156, 0.5));
   }
 
-  /* Sticky semi-transparent header */
+  /* Floating semi-transparent header */
   .header-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 1rem auto;
     padding: 1rem 2rem;
-    background-color: rgba(255,255,255,0); /* more transparent */
-    backdrop-filter: blur(9px);
+    background-color: rgba(255,255,255,0.25); /* semi-transparent */
+    backdrop-filter: blur(10px);
     border-radius: 10px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    position: relative;
+    z-index: 100;
   }
-  .header-left { text-align: left; flex: 1; }
-  .header-right { text-align: right; flex: 1; }
+  .header-left { order: 1; }
+  .header-right { order: 2; text-align:right; }
 
-  /* Sticky vertical nav centered left */
+  /* Sticky vertical nav at footer-left */
   nav {
     position: fixed;
-    top: 50%;
+    bottom: 1rem;
     left: 1rem;
-    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
@@ -121,13 +119,22 @@
   .skill-card { background: rgba(255,255,255,0.3); padding:1rem; border-radius:8px; flex:1 1 220px; max-width:300px; transition: transform 0.3s, box-shadow 0.3s; }
   .skill-card:hover { transform: scale(1.03); box-shadow:0 4px 12px rgba(0,0,0,0.15); }
   .skill-card b { display:block; margin-bottom:0.5rem; }
-  section { max-width:1200px; margin:2rem auto; padding:0 1rem; text-align:left; }
+
+  /* All sections scroll offset fix */
+  section { 
+    max-width:1200px; 
+    margin:2rem auto; 
+    padding:0 1rem; 
+    text-align:left; 
+    scroll-margin-top: 140px; /* header offset */
+  }
   section h3 { text-align:left; }
+
   #languages table { text-align:center; margin:auto; }
   #languages b { font-weight: bold; }
 
   @media screen and (max-width:768px){
-    nav { position: static; flex-direction: row; justify-content:center; margin:1rem 0; transform:none; }
+    nav { position: static; flex-direction: row; justify-content:center; margin:1rem 0; }
     nav a { margin:0.5rem 1rem; }
   }
 
@@ -265,6 +272,7 @@
   </div>
 </div>
 
+
 <hr>
 
 <!-- Education -->
@@ -323,8 +331,7 @@
   <p>Email: <a href="mailto:rt.ratnayake@gmail.com">rt.ratnayake@gmail.com</a></p>
 </section>
 
-
-<div class="photo-credit">Photo by <a href="https://unsplash.com/@pawel_czerwinski">Pawel Czerwinski</a> on <a href="https://unsplash.com">Unsplash</a></div>
+<div class="photo-credit">Photo by <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pawel Czerwinski</a> on <a href="https://unsplash.com">Unsplash</a></div>
 
 <script>
 document.querySelectorAll('td.job-title button').forEach(btn=>{
@@ -359,7 +366,3 @@ video.addEventListener('ended', () => {
 
 </body>
 </html>
-
-
-
-
