@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
+    /* Modern font stack */
     body {
         font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
         margin: 0; padding: 0;
@@ -85,19 +86,17 @@
     }
 
     .video-container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin: 2rem auto;
+        width:100%;
+        text-align:center;
+        margin:2rem auto;
         border-radius:10px;
         background-color: rgba(255,255,255,0.2);
         padding:1rem;
     }
 
     video {
-        width: 100%;
-        max-width: 640px;
-        height: auto;
+        max-width:50%;
+        height:auto;
         border-radius:8px;
     }
 
@@ -184,6 +183,7 @@
         nav a { display:block; margin:0.5rem 0; }
     }
 
+    /* Modal Styles */
     .modal {
         display: none;
         position: fixed;
@@ -265,10 +265,11 @@
   </nav>
 </div>
 
+<!-- About -->
 <section id="about" style="text-align:center;">
   <p style="text-align:center; font-size:1.2rem; font-weight:500;">I am a dedicated Operations & Support Engineer with over 10 years of customer success experience on various SaaS platforms.</p>
   <div class="video-container">
-    <video id="introVideo" controls preload="auto" poster="thumbnail_2.png">
+    <video id="introVideo" width="100%" controls preload="auto" poster="thumbnail_2.png">
       <source src="intro_1.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -451,12 +452,13 @@
         }
       });
     });
-  });
 
-  const video = document.getElementById('introVideo');
-  video.addEventListener('ended', () => {
-    video.pause();
-    video.currentTime = 0;
+    // Reset video when finished
+    const video = document.getElementById('introVideo');
+    video.addEventListener('ended', () => {
+      video.pause();
+      video.currentTime = 0;
+    });
   });
 </script>
 
