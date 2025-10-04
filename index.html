@@ -69,28 +69,30 @@
       filter: drop-shadow(0 0 15px rgba(26, 188, 156, 0.5));
   }
 
-  /* Floating semi-transparent header */
+  /* Sticky semi-transparent header */
   .header-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
-    margin: 1rem auto;
+    margin: 0 auto;
     padding: 1rem 2rem;
-    background-color: rgba(255,255,255,0.25);
-    backdrop-filter: blur(10px);
+    background-color: rgba(255,255,255,0.15); /* more transparent */
+    backdrop-filter: blur(12px);
     border-radius: 10px;
-    position: relative;
-    z-index: 100;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
-  .header-left { order: 1; }
-  .header-right { order: 2; text-align:right; }
+  .header-left { text-align: left; flex: 1; }
+  .header-right { text-align: right; flex: 1; }
 
-  /* Sticky vertical nav at footer-left */
+  /* Sticky vertical nav centered left */
   nav {
     position: fixed;
-    bottom: 1rem;
+    top: 50%;
     left: 1rem;
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
@@ -125,7 +127,7 @@
   #languages b { font-weight: bold; }
 
   @media screen and (max-width:768px){
-    nav { position: static; flex-direction: row; justify-content:center; margin:1rem 0; }
+    nav { position: static; flex-direction: row; justify-content:center; margin:1rem 0; transform:none; }
     nav a { margin:0.5rem 1rem; }
   }
 
@@ -231,7 +233,37 @@
   </div>
 </div>
 
-<!-- Repeat job3–job6 modals as in previous code -->
+<div class="modal" id="job3">
+  <div class="modal-content"><span class="close">&times;</span>
+    <h4>Business Intelligence Systems Analyst</h4>
+    <div class="meta">2008 - 2009 | Vienna, Austria</div>
+    <p>Translating business needs into analytics/reporting requirements, and interfacing with internal team members to ensure successful delivery of BI reports from different departments.</p>
+  </div>
+</div>
+
+<div class="modal" id="job4">
+  <div class="modal-content"><span class="close">&times;</span>
+    <h4>Jr. Fraud & Risk Analyst</h4>
+    <div class="meta">2006 - 2008 | Vienna, Austria</div>
+    <p>B2C Gaming platform fraud and risk analytics of gaming clients for various payment platforms. Risk checks applied during online payments, implementation of anti-fraud and security solutions.</p>
+  </div>
+</div>
+
+<div class="modal" id="job5">
+  <div class="modal-content"><span class="close">&times;</span>
+    <h4>Technical Support</h4>
+    <div class="meta">2005 - 2006 | Vienna, Austria</div>
+    <p>Providing customers with dedicated support & solutions on printing and fax devices as well as TV set-top-boxes.</p>
+  </div>
+</div>
+
+<div class="modal" id="job6">
+  <div class="modal-content"><span class="close">&times;</span>
+    <h4>Resolution Owner</h4>
+    <div class="meta">2001 - 2003 | Greenock, Scotland</div>
+    <p>Single-point-of-contact for clients who have been disappointed with IBM's performance. Duties included turning complaining clients into loyal IBM clients by being responsive and proactive.</p>
+  </div>
+</div>
 
 <hr>
 
@@ -291,7 +323,8 @@
   <p>Email: <a href="mailto:rt.ratnayake@gmail.com">rt.ratnayake@gmail.com</a></p>
 </section>
 
-<div class="photo-credit">Photo by <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pawel Czerwinski</a> on <a href="https://unsplash.com">Unsplash</a></div>
+
+<div class="photo-credit">Photo by <a href="https://unsplash.com/@pawel_czerwinski">Pawel Czerwinski</a> on <a href="https://unsplash.com">Unsplash</a></div>
 
 <script>
 document.querySelectorAll('td.job-title button').forEach(btn=>{
