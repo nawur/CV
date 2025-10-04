@@ -26,7 +26,7 @@ td.job-title button {
     font-weight: bold;
     cursor: pointer;
     padding: 0.5rem 1rem;
-    background: #145a32; /* darker green */
+    background: #1abc9c; /* green */
     color: #fff;
     border: none;
     border-radius: 6px;
@@ -36,7 +36,7 @@ td.job-title button {
     transition: background 0.3s, transform 0.2s;
 }
 td.job-title button:hover {
-    background: #0e3d22; /* even darker green on hover */
+    background: #16a085; /* darker hover */
     transform: scale(1.05);
 }
 
@@ -136,40 +136,92 @@ Your browser does not support the video tag.
 <tbody>
 <tr class="job-row" data-job="job1">
 <td style="color:red;">Dec 2022 - Present</td>
-<td>Company name (withheld)<br>Leipzig, Germany<br>(Remote – Sri Lanka)</td>
+<td><b>Company name (withheld)</b><br>Leipzig, Germany<br>(Remote – Sri Lanka)</td>
 <td class="job-title"><button>Operations & Support Engineer</button></td>
 </tr>
 <tr class="job-row" data-job="job2">
 <td>Nov 2013 - Dec 2022</td>
-<td>Odyssee Mobile NV (aka Wello Solutions)<br>Brussels, Belgium<br>(Remote – Sri Lanka)</td>
+<td><b>Odyssee Mobile NV (aka Wello Solutions)</b><br>Brussels, Belgium<br>(Remote – Sri Lanka)</td>
 <td class="job-title"><button>L3 HelpDesk</button></td>
 </tr>
 <tr class="job-row" data-job="job3">
 <td>2008 - 2009</td>
-<td>UPC Telekabel Wien GmbH<br>Vienna, Austria</td>
+<td><b>UPC Telekabel Wien GmbH</b><br>Vienna, Austria</td>
 <td class="job-title"><button>Business Intelligence Systems Analyst</button></td>
 </tr>
 <tr class="job-row" data-job="job4">
 <td>2006 - 2008</td>
-<td>CQR Payment Solutions GmbH, Bwin Group<br>Vienna, Austria</td>
+<td><b>CQR Payment Solutions GmbH, Bwin Group</b><br>Vienna, Austria</td>
 <td class="job-title"><button>Jr. Fraud & Risk Analyst</button></td>
 </tr>
 <tr class="job-row" data-job="job5">
 <td>2005 - 2006</td>
-<td>Sagem Communications Austria GmbH<br>Vienna, Austria</td>
+<td><b>Sagem Communications Austria GmbH</b><br>Vienna, Austria</td>
 <td class="job-title"><button>Technical Support</button></td>
 </tr>
 <tr class="job-row" data-job="job6">
 <td>2001 - 2003</td>
-<td>IBM UK Ltd./Lenovo UK Ltd<br>Greenock, (Scotland) UK</td>
+<td><b>IBM UK Ltd./Lenovo UK Ltd</b><br>Greenock, (Scotland) UK</td>
 <td class="job-title"><button>Resolution Owner</button></td>
 </tr>
 </tbody>
 </table>
 </section>
 
-<!-- Modals -->
-<!-- (kept the same as before, unchanged) -->
+<!-- Example Modal (repeat for job2, job3, etc.) -->
+<div id="job1" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h4>Operations & Support Engineer</h4>
+    <p class="meta"><b>Company name (withheld)</b>, Leipzig, Germany (Remote – Sri Lanka) | Dec 2022 – Present</p>
+    <p>Responsibilities: Leading operations, customer success, and platform support for enterprise SaaS solutions.</p>
+  </div>
+</div>
+
+<div id="job2" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h4>L3 HelpDesk</h4>
+    <p class="meta"><b>Odyssee Mobile NV (aka Wello Solutions)</b>, Brussels, Belgium (Remote – Sri Lanka) | Nov 2013 – Dec 2022</p>
+    <p>Responsibilities: Provided L3 support, troubleshooting, and incident resolution for SaaS platforms serving global clients.</p>
+  </div>
+</div>
+
+<div id="job3" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h4>Business Intelligence Systems Analyst</h4>
+    <p class="meta"><b>UPC Telekabel Wien GmbH</b>, Vienna, Austria | 2008 – 2009</p>
+    <p>Responsibilities: Developed reports, optimized BI workflows, and supported data-driven decision-making.</p>
+  </div>
+</div>
+
+<div id="job4" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h4>Jr. Fraud & Risk Analyst</h4>
+    <p class="meta"><b>CQR Payment Solutions GmbH, Bwin Group</b>, Vienna, Austria | 2006 – 2008</p>
+    <p>Responsibilities: Monitored transactions, investigated fraud cases, and implemented risk-mitigation strategies.</p>
+  </div>
+</div>
+
+<div id="job5" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h4>Technical Support</h4>
+    <p class="meta"><b>Sagem Communications Austria GmbH</b>, Vienna, Austria | 2005 – 2006</p>
+    <p>Responsibilities: Delivered technical support for telecommunications equipment and resolved client issues.</p>
+  </div>
+</div>
+
+<div id="job6" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h4>Resolution Owner</h4>
+    <p class="meta"><b>IBM UK Ltd./Lenovo UK Ltd</b>, Greenock, (Scotland) UK | 2001 – 2003</p>
+    <p>Responsibilities: Managed escalated cases, coordinated with technical teams, and ensured timely issue resolution.</p>
+  </div>
+</div>
 
 <script>
 // Video reset
