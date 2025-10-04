@@ -19,26 +19,24 @@ table { width:100%; max-width:1200px; margin:2rem auto; border-collapse:collapse
 td { vertical-align: top; padding:1rem 1.2rem; font-size:1rem; }
 
 /* Job Title Buttons */
-td.job-title {
-    text-align: left;
-}
+td.job-title { text-align: left; }
 td.job-title button {
     font-weight: bold;
     cursor: pointer;
-    padding: 0.5rem 1rem;
-    background: #1abc9c; /* green */
+    padding: 0.4rem 0.8rem;
+    background: #1abc9c;
     color: #fff;
     border: none;
     border-radius: 6px;
     text-align: center;
     font-size: 1rem;
-    width: 220px; /* uniform width */
     transition: background 0.3s, transform 0.2s;
 }
 td.job-title button:hover {
-    background: #16a085; /* darker hover */
+    background: #16a085;
     transform: scale(1.05);
 }
+td.company { font-weight: bold; }
 
 .video-container { width:100%; text-align:center; margin:2rem auto; border-radius:10px; background-color: rgba(255,255,255,0.2); padding:1rem; }
 video { max-width:50%; height:auto; border-radius:8px; }
@@ -136,92 +134,131 @@ Your browser does not support the video tag.
 <tbody>
 <tr class="job-row" data-job="job1">
 <td style="color:red;">Dec 2022 - Present</td>
-<td><b>Company name (withheld)</b><br>Leipzig, Germany<br>(Remote – Sri Lanka)</td>
+<td class="company">Company name (withheld)<br>Leipzig, Germany<br>(Remote – Sri Lanka)</td>
 <td class="job-title"><button>Operations & Support Engineer</button></td>
 </tr>
 <tr class="job-row" data-job="job2">
 <td>Nov 2013 - Dec 2022</td>
-<td><b>Odyssee Mobile NV (aka Wello Solutions)</b><br>Brussels, Belgium<br>(Remote – Sri Lanka)</td>
+<td class="company">Odyssee Mobile NV (aka Wello Solutions)<br>Brussels, Belgium<br>(Remote – Sri Lanka)</td>
 <td class="job-title"><button>L3 HelpDesk</button></td>
 </tr>
 <tr class="job-row" data-job="job3">
 <td>2008 - 2009</td>
-<td><b>UPC Telekabel Wien GmbH</b><br>Vienna, Austria</td>
+<td class="company">UPC Telekabel Wien GmbH<br>Vienna, Austria</td>
 <td class="job-title"><button>Business Intelligence Systems Analyst</button></td>
 </tr>
 <tr class="job-row" data-job="job4">
 <td>2006 - 2008</td>
-<td><b>CQR Payment Solutions GmbH, Bwin Group</b><br>Vienna, Austria</td>
+<td class="company">CQR Payment Solutions GmbH, Bwin Group<br>Vienna, Austria</td>
 <td class="job-title"><button>Jr. Fraud & Risk Analyst</button></td>
 </tr>
 <tr class="job-row" data-job="job5">
 <td>2005 - 2006</td>
-<td><b>Sagem Communications Austria GmbH</b><br>Vienna, Austria</td>
+<td class="company">Sagem Communications Austria GmbH<br>Vienna, Austria</td>
 <td class="job-title"><button>Technical Support</button></td>
 </tr>
 <tr class="job-row" data-job="job6">
 <td>2001 - 2003</td>
-<td><b>IBM UK Ltd./Lenovo UK Ltd</b><br>Greenock, (Scotland) UK</td>
+<td class="company">IBM UK Ltd./Lenovo UK Ltd<br>Greenock, (Scotland) UK</td>
 <td class="job-title"><button>Resolution Owner</button></td>
 </tr>
 </tbody>
 </table>
 </section>
 
-<!-- Example Modal (repeat for job2, job3, etc.) -->
-<div id="job1" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h4>Operations & Support Engineer</h4>
-    <p class="meta"><b>Company name (withheld)</b>, Leipzig, Germany (Remote – Sri Lanka) | Dec 2022 – Present</p>
-    <p>Responsibilities: Leading operations, customer success, and platform support for enterprise SaaS solutions.</p>
-  </div>
+<!-- Modals -->
+<div class="modal" id="job1">
+<div class="modal-content"><span class="close">&times;</span>
+<h4>Operations & Support Engineer</h4>
+<div class="meta">Dec 2022 - Present | Leipzig, Germany (Work from Home in Sri-Lanka)</div>
+<p>Providing technical support under the umbrella of ETL/ELT processes and virtualization of data by setting-up, configuring, troubleshooting and debugging various eCommerce REST API connectors; and JDBC Drivers from numerous data sources in a SaaS environment.<br><br>Advising, assisting, devising, troubleshooting and debugging SQL procedures and other scripts for clientele to help them retrieve their anticipated datasets.</p>
+</div>
 </div>
 
-<div id="job2" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h4>L3 HelpDesk</h4>
-    <p class="meta"><b>Odyssee Mobile NV (aka Wello Solutions)</b>, Brussels, Belgium (Remote – Sri Lanka) | Nov 2013 – Dec 2022</p>
-    <p>Responsibilities: Provided L3 support, troubleshooting, and incident resolution for SaaS platforms serving global clients.</p>
-  </div>
+<div class="modal" id="job2">
+<div class="modal-content"><span class="close">&times;</span>
+<h4>Level 3 HelpDesk</h4>
+<div class="meta">Nov 2013 - Dec 2022 | Brussels, Belgium (Work from Home in Sri-Lanka)</div>
+<p>Helpdesk & Quality Assurance. Primary Role: B2B Helpdesk. Resolving & troubleshooting Odyssee SaaS solutions for customers. Incident Management – bug replication, documentation and escalation to Development. Interaction with Product Owners advocating customer's change requests. Database analytics – Querying in SQL to troubleshoot data problems. Secondary Role: Quality Assurance – checking User Interface for bugs on Android, Windows UWP & Website portal.</p>
+</div>
 </div>
 
-<div id="job3" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h4>Business Intelligence Systems Analyst</h4>
-    <p class="meta"><b>UPC Telekabel Wien GmbH</b>, Vienna, Austria | 2008 – 2009</p>
-    <p>Responsibilities: Developed reports, optimized BI workflows, and supported data-driven decision-making.</p>
-  </div>
+<div class="modal" id="job3">
+<div class="modal-content"><span class="close">&times;</span>
+<h4>Business Intelligence Systems Analyst</h4>
+<div class="meta">2008 - 2009 | Vienna, Austria</div>
+<p>Translating business needs into analytics/reporting requirements, and interfacing with internal team members to ensure successful delivery of BI reports from different departments.</p>
+</div>
 </div>
 
-<div id="job4" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h4>Jr. Fraud & Risk Analyst</h4>
-    <p class="meta"><b>CQR Payment Solutions GmbH, Bwin Group</b>, Vienna, Austria | 2006 – 2008</p>
-    <p>Responsibilities: Monitored transactions, investigated fraud cases, and implemented risk-mitigation strategies.</p>
-  </div>
+<div class="modal" id="job4">
+<div class="modal-content"><span class="close">&times;</span>
+<h4>Jr. Fraud & Risk Analyst</h4>
+<div class="meta">2006 - 2008 | Vienna, Austria</div>
+<p>B2C Gaming platform fraud and risk analytics of gaming clients for various payment platforms. Risk checks applied during online payments, implementation of anti-fraud and security solutions.</p>
+</div>
 </div>
 
-<div id="job5" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h4>Technical Support</h4>
-    <p class="meta"><b>Sagem Communications Austria GmbH</b>, Vienna, Austria | 2005 – 2006</p>
-    <p>Responsibilities: Delivered technical support for telecommunications equipment and resolved client issues.</p>
-  </div>
+<div class="modal" id="job5">
+<div class="modal-content"><span class="close">&times;</span>
+<h4>Technical Support</h4>
+<div class="meta">2005 - 2006 | Vienna, Austria</div>
+<p>Providing customers with dedicated support & solutions on printing and fax devices as well as TV set-top-boxes.</p>
+</div>
 </div>
 
-<div id="job6" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h4>Resolution Owner</h4>
-    <p class="meta"><b>IBM UK Ltd./Lenovo UK Ltd</b>, Greenock, (Scotland) UK | 2001 – 2003</p>
-    <p>Responsibilities: Managed escalated cases, coordinated with technical teams, and ensured timely issue resolution.</p>
-  </div>
+<div class="modal" id="job6">
+<div class="modal-content"><span class="close">&times;</span>
+<h4>Resolution Owner</h4>
+<div class="meta">2001 - 2003 | Greenock, Scotland</div>
+<p>Single-point-of-contact for clients who have been disappointed with IBM's performance. Duties included turning complaining clients into loyal IBM clients by being responsive and proactive.</p>
 </div>
+</div>
+
+<hr>
+
+<!-- Education -->
+<section id="education">
+<h3>Education</h3>
+<table>
+<tbody>
+<tr><td>1997-2001</td><td>Johnson & Wales University   Providence, RI. USA</td><td></td><td>MBA in International Business<br>Bachelor of Science in Hotel/Restaurant Institutional Management</td></tr>
+<tr><td>1994-1996</td><td>ICHM Modul   Vienna, Austria</td><td></td><td>Associate of Arts in Hospitality Management</td></tr>
+<tr><td>1982-1992</td><td>Vienna International School   Vienna, Austria</td><td></td><td>International Baccalaureate\Matura</td></tr>
+</tbody>
+</table>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+<h3>Skills & Certifications</h3>
+<div class="skills-grid">
+<div class="skill-card" style="background-color:#ADD8E6;"><b>Certification:</b> OCA Oracle Certified PL/SQL Developer</div>
+<div class="skill-card"><b>Applications:</b> Zendesk, Asana, Jira, Confluence, Slack, MS-Teams, Zoom, Office</div>
+<div class="skill-card"><b>OS/Environments/Languages:</b> SQL, Windows, Linux, SSH, WildFly, SSMS, Pycharm, AWS, Azure, HTML/CSS</div>
+<div class="skill-card"><b>Databases:</b> SQL Server, Snowflake, BigQuery, MySQL, MariaDB, PostgreSQL</div>
+</div>
+</section>
+
+<!-- Languages -->
+<section id="languages">
+<h3>Languages</h3>
+<table>
+<tbody>
+<tr><td>English: Spoken & Written - Native</td><td>German: Spoken - Fluent, Written - Good</td></tr>
+</tbody>
+</table>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+<h3>Contact</h3>
+<p>Nationality: Austria<img src="images/austria.png" class="contact-img"> (European Union)<br>Currently based in Sri Lanka</p>
+<p>Phone: +94 766981521</p>
+<p>Email: <a href="mailto:rt.ratnayake@gmail.com">rt.ratnayake@gmail.com</a></p>
+</section>
+
+<div class="photo-credit">Photo by <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pawel Czerwinski</a> on <a href="https://unsplash.com">Unsplash</a></div>
 
 <script>
 // Video reset
