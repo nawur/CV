@@ -1,348 +1,471 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>ratnayake-cv/lebenslauf</title>
-<link rel="icon" href="images/favicon.ico">
-<style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0; padding: 0;
-    background: url('images/Background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #333;
-    scroll-behavior: smooth;
-    position: relative;
-}
+  <meta charset="UTF-8">
+  <title>ratnayake-cv/lebenslauf</title>
+  <link rel="icon" href="images/favicon.ico">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
-/* Grey overlay */
-body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.4); /* grey overlay */
-    z-index: -1;
-}
+  <style>
+    /* Modern font stack */
+    body {
+        font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+        margin: 0; padding: 0;
+        background: url('images/Background.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: #333;
+        line-height: 1.6;   /* better readability */
+        scroll-behavior: smooth;
+    }
 
-h2,h3 {color:#2c3e50;}
-hr {border:0; border-top:1px solid #ccc; margin:2rem 0;}
-table { width:100%; max-width:1200px; margin:2rem auto; border-collapse:collapse; background-color: rgba(255,255,255,0.3); border-radius:8px; text-align:left; }
-td { vertical-align: top; padding:1rem 1.2rem; font-size:1rem; }
+    /* Headings */
+    h1 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        font-size: 2.8rem;
+        color: #2c3e50;
+    }
 
-/* Job Title Buttons */
-td.job-title {
-    text-align: left;
-}
-td.job-title button {
-    font-weight: bold;
-    cursor: pointer;
-    padding: 0.4rem 0.8rem;
-    background: #1abc9c;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    text-align: center;
-    font-size: 1rem;
-    transition: background 0.3s, transform 0.2s;
-}
-td.job-title button:hover {
-    background: #16a085;
-    transform: scale(1.05);
-}
+    h2, h3 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 0.6rem;
+    }
 
-.video-container { width:100%; text-align:center; margin:2rem auto; border-radius:10px; background-color: rgba(255,255,255,0.2); padding:1rem; }
-video { max-width:50%; height:auto; border-radius:8px; }
+    /* Subtext (job locations, body) */
+    p, td, .modal-content, nav a {
+        font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+        font-size: 1rem;
+        color: #444;
+    }
 
-.header-section { padding:1rem; text-align:center;}
-.header-nav-container { 
-    position:sticky; 
-    top:0; 
-    z-index:1000; 
-    background-color: rgba(255,255,255,0.1); /* more transparent */
-    border-radius:8px; 
-    margin:0.2rem; 
-}
-nav { text-align:center; padding:0.5rem; backdrop-filter:blur(5px); }
-nav a { margin:0 1rem; color:#2c3e50; text-decoration:none; font-weight:bold; transition: color 0.3s, transform 0.3s; }
-nav a:hover { color:#1abc9c; transform:scale(1.05); text-decoration:underline; }
+    /* Section headings */
+    section h3 {
+        font-size: 1.6rem;
+        border-bottom: 2px solid #1abc9c;
+        display: inline-block;
+        padding-bottom: 0.2rem;
+    }
 
-.photo-credit { position: fixed; bottom:0.5rem; right:0.5rem; background-color: rgba(255,255,255,0.5); padding:0.3rem 0.6rem; border-radius:5px; font-size:0.75rem; }
-.contact-img { vertical-align:middle; margin-left:0.5rem; width:20px; }
+    hr {border:0; border-top:1px solid #ccc; margin:2rem 0;}
 
-.skills-grid { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:1rem; }
-.skill-card { background: rgba(255,255,255,0.3); padding:1rem; border-radius:8px; flex:1 1 220px; max-width:300px; transition: transform 0.3s, box-shadow 0.3s;}
-.skill-card:hover { transform: scale(1.03); box-shadow:0 4px 12px rgba(0,0,0,0.15);}
-.skill-card b { display:block; margin-bottom:0.5rem; }
+    table {
+        width:100%;
+        max-width:1200px;
+        margin:2rem auto;
+        border-collapse:collapse;
+        background-color: rgba(255,255,255,0.3);
+        border-radius:8px;
+        text-align:left;
+    }
 
-section { 
-    max-width:1200px; 
-    margin:3rem auto;  /* more breathing space */
-    padding:0 1.5rem; 
-    text-align:left; 
-}
-section h3 { text-align:left; }
-#languages table { text-align:center; margin:auto; }
+    td {
+        vertical-align: top;
+        padding:1rem 1.2rem;
+        font-size:1rem;
+    }
 
-@media screen and (max-width:768px){ 
-    table { width:95%; margin:1rem auto;} 
-    nav a { display:block; margin:0.5rem 0; } 
-}
+    /* Job Title Buttons */
+    td.job-title { text-align: left; }
+    td.job-title button {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 0.4rem 0.8rem;
+        background: #1abc9c;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        text-align: center;
+        font-size: 1rem;
+        letter-spacing: 0.3px;
+        transition: background 0.3s, transform 0.2s;
+    }
+    td.job-title button:hover {
+        background: #16a085;
+        transform: scale(1.05);
+    }
 
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background: rgba(0,0,0,0.6);
-    animation: fadeIn 0.3s;
-}
-.modal-content {
-    background-color: rgba(255,255,255,0.95);
-    margin: 10% auto;
-    padding: 2rem;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 600px;
-    text-align: left;
-    color: #111;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    animation: slideDown 0.3s ease;
-    position: relative;
-}
-.modal-content h4 { margin-top:0; }
-.modal-content .meta {
-    font-size: 0.9rem;
-    color: #333;
-    margin-bottom: 1rem;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-}
-.close { color:#aaa; position:absolute; top:10px; right:20px; font-size:28px; font-weight:bold; cursor:pointer; }
-.close:hover { color:#1abc9c; }
-@keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
-@keyframes slideDown { from{transform:translateY(-20px);} to{transform:translateY(0);} }
-</style>
+    .video-container {
+        width:100%;
+        text-align:center;
+        margin:2rem auto;
+        border-radius:10px;
+        background-color: rgba(255,255,255,0.2);
+        padding:1rem;
+    }
+
+    video {
+        max-width:50%;
+        height:auto;
+        border-radius:8px;
+    }
+
+    .header-section {
+        padding:1rem;
+        text-align:center;
+    }
+
+    .header-nav-container {
+        position:sticky;
+        top:0;
+        z-index:1000;
+        background-color: rgba(255,255,255,0.1);
+        border-radius:8px;
+        margin:0.2rem;
+    }
+
+    nav {
+        text-align:center;
+        padding:0.5rem;
+        backdrop-filter:blur(5px);
+    }
+
+    nav a {
+        margin:0 1rem;
+        color:#2c3e50;
+        text-decoration:none;
+        font-weight:500;
+        letter-spacing: 0.3px;
+        transition: color 0.3s, transform 0.3s;
+    }
+    nav a:hover {
+        color:#1abc9c;
+        transform:scale(1.05);
+        text-decoration:underline;
+    }
+
+    .photo-credit {
+        position: fixed;
+        bottom:0.5rem;
+        right:0.5rem;
+        background-color: rgba(255,255,255,0.5);
+        padding:0.3rem 0.6rem;
+        border-radius:5px;
+        font-size:0.75rem;
+    }
+
+    .contact-img { vertical-align:middle; margin-left:0.5rem; width:20px; }
+
+    .skills-grid {
+        display:flex;
+        flex-wrap:wrap;
+        gap:1rem;
+        justify-content:center;
+        margin-top:1rem;
+    }
+
+    .skill-card {
+        background: rgba(255,255,255,0.3);
+        padding:1rem;
+        border-radius:8px;
+        flex:1 1 220px;
+        max-width:300px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .skill-card:hover {
+        transform: scale(1.03);
+        box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    }
+    .skill-card b { display:block; margin-bottom:0.5rem; }
+
+    section {
+        max-width:1200px;
+        margin:2rem auto;
+        padding:0 1rem;
+        text-align:left;
+    }
+    section h3 { text-align:left; }
+
+    #languages table { text-align:center; margin:auto; }
+
+    @media screen and (max-width:768px){
+        table { width:95%; margin:1rem auto;}
+        nav a { display:block; margin:0.5rem 0; }
+    }
+
+    /* Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0; top: 0;
+        width: 100%; height: 100%;
+        overflow: auto;
+        background: rgba(0,0,0,0.6);
+        animation: fadeIn 0.3s;
+    }
+
+    .modal-content {
+        background-color: rgba(255,255,255,0.95);
+        margin: 10% auto;
+        padding: 2rem;
+        border-radius: 10px;
+        width: 90%; max-width: 600px;
+        text-align: left;
+        color: #111;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        animation: slideDown 0.3s ease;
+        position: relative;
+    }
+
+    .modal-content h4 {
+        margin-top:0;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 1.3rem;
+        color: #1a1a1a;
+    }
+
+    .modal-content .meta {
+        font-size: 0.9rem;
+        color: #333;
+        margin-bottom: 1rem;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
+
+    .close {
+        color:#aaa;
+        position:absolute;
+        top:10px; right:20px;
+        font-size:28px;
+        font-weight:bold;
+        cursor:pointer;
+    }
+    .close:hover { color:#1abc9c; }
+
+    @keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
+    @keyframes slideDown { from{transform:translateY(-20px);} to{transform:translateY(0);} }
+  </style>
 </head>
 <body>
 
 <div class="header-nav-container">
-<header class="header-section">
-  <div style="display:flex; justify-content:space-between; align-items:center;">
-    <!-- Download CV button -->
-    <a href="Ruwan Ratnayake - CV.pdf" download style="
-        padding: 0.5rem 1rem;
-        background-color: #1abc9c;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 6px;
-        font-weight: bold;
-        transition: background 0.3s, transform 0.2s;
-    " onmouseover="this.style.background='#16a085';" onmouseout="this.style.background='#1abc9c';">
-      Download CV
-    </a>
-
-    <!-- Name and title -->
-    <div style="text-align:right;">
-      <h1 style="margin:0; font-weight:bold; font-size:2.5rem;">ruwan.ratnayake</h1>
-      <p style="margin:0.3rem 0 0 0; font-size:1.1rem; color:#eee;">Operations & Support Engineer</p>
+  <header class="header-section">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <!-- Download CV button -->
+      <a href="Ruwan Ratnayake - CV.pdf" download 
+         style=" padding: 0.5rem 1rem; background-color: #1abc9c; color: #fff; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.3s, transform 0.2s; "
+         onmouseover="this.style.background='#16a085';" 
+         onmouseout="this.style.background='#1abc9c';">
+         Download CV
+      </a>
+      <!-- Name and title -->
+      <div style="text-align:right;">
+        <h1 style="margin:0;">ruwan.ratnayake</h1>
+        <p style="margin:0.3rem 0 0 0; font-size:1.1rem; color:#555;">Operations & Support Engineer</p>
+      </div>
     </div>
-  </div>
-</header>
-<nav>
-<a href="#about">Video</a>
-<a href="#experience">Work Experience</a>
-<a href="#education">Education</a>
-<a href="#skills">Skills</a>
-<a href="#languages">Languages</a>
-<a href="#contact">Contact</a>
-</nav>
+  </header>
+
+  <nav>
+    <a href="#about">Video</a>
+    <a href="#experience">Work Experience</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#languages">Languages</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </div>
 
 <!-- About -->
 <section id="about" style="text-align:center;">
-<p style="text-align:center; font-size:1.2rem; font-weight:500; color:#f5f5f5;">I am a dedicated Operations & Support Engineer with over 10 years of customer success experience on various SaaS platforms.</p>
-<div class="video-container">
-<h3>Video Intro: 1 min</h3>
-<video id="introVideo" width="100%" controls preload="auto" poster="thumbnail_2.png">
-<source src="intro_1.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
-</div>
+  <p style="text-align:center; font-size:1.2rem; font-weight:500;">I am a dedicated Operations & Support Engineer with over 10 years of customer success experience on various SaaS platforms.</p>
+  <div class="video-container">
+    <h3>Video Intro: 1 min</h3>
+    <video id="introVideo" width="100%" controls preload="auto" poster="thumbnail_2.png">
+      <source src="intro_1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 </section>
+
 <hr>
 
 <!-- Work Experience -->
 <section id="experience">
-<h3>Work Experience <span style="font-size:0.9rem; font-weight:normal; color:#ddd;">(Click buttons to view job description)</span></h3>
-<table>
-<tbody>
-<tr class="job-row" data-job="job1">
-<td>Dec 2022 - Present</td>
-<td><b>(Company name withheld)</b><br>Leipzig, Germany<br>(Remote – Sri Lanka)</td>
-<td class="job-title"><button>Operations & Support Engineer</button></td>
-</tr>
-<tr class="job-row" data-job="job2">
-<td>Nov 2013 - Dec 2022</td>
-<td><b>Odyssee Mobile NV (aka Wello Solutions)</b><br>Brussels, Belgium<br>(Remote – Sri Lanka)</td>
-<td class="job-title"><button>L3 HelpDesk</button></td>
-</tr>
-<tr class="job-row" data-job="job3">
-<td>2008 - 2009</td>
-<td><b>UPC Telekabel Wien GmbH</b><br>Vienna, Austria</td>
-<td class="job-title"><button>Business Intelligence Systems Analyst</button></td>
-</tr>
-<tr class="job-row" data-job="job4">
-<td>2006 - 2008</td>
-<td><b>CQR Payment Solutions GmbH, Bwin Group</b><br>Vienna, Austria</td>
-<td class="job-title"><button>Jr. Fraud & Risk Analyst</button></td>
-</tr>
-<tr class="job-row" data-job="job5">
-<td>2005 - 2006</td>
-<td><b>Sagem Communications Austria GmbH</b><br>Vienna, Austria</td>
-<td class="job-title"><button>Technical Support</button></td>
-</tr>
-<tr class="job-row" data-job="job6">
-<td>2001 - 2003</td>
-<td><b>IBM UK Ltd./Lenovo UK Ltd</b><br>Greenock, (Scotland) UK</td>
-<td class="job-title"><button>Resolution Owner</button></td>
-</tr>
-</tbody>
-</table>
+  <h3>Work Experience <span style="font-size:0.9rem; font-weight:normal; color:#555;">(Click buttons to view job description)</span></h3>
+  <table>
+    <tbody>
+      <tr class="job-row" data-job="job1">
+        <td>Dec 2022 - Present</td>
+        <td><b>(Company name withheld)</b><br>Leipzig, Germany<br>(Remote – Sri Lanka)</td>
+        <td class="job-title"><button>Operations & Support Engineer</button></td>
+      </tr>
+      <tr class="job-row" data-job="job2">
+        <td>Nov 2013 - Dec 2022</td>
+        <td><b>Odyssee Mobile NV (aka Wello Solutions)</b><br>Brussels, Belgium<br>(Remote – Sri Lanka)</td>
+        <td class="job-title"><button>L3 HelpDesk</button></td>
+      </tr>
+      <tr class="job-row" data-job="job3">
+        <td>2008 - 2009</td>
+        <td><b>UPC Telekabel Wien GmbH</b><br>Vienna, Austria</td>
+        <td class="job-title"><button>Business Intelligence Systems Analyst</button></td>
+      </tr>
+      <tr class="job-row" data-job="job4">
+        <td>2006 - 2008</td>
+        <td><b>CQR Payment Solutions GmbH, Bwin Group</b><br>Vienna, Austria</td>
+        <td class="job-title"><button>Jr. Fraud & Risk Analyst</button></td>
+      </tr>
+      <tr class="job-row" data-job="job5">
+        <td>2005 - 2006</td>
+        <td><b>Sagem Communications Austria GmbH</b><br>Vienna, Austria</td>
+        <td class="job-title"><button>Technical Support</button></td>
+      </tr>
+      <tr class="job-row" data-job="job6">
+        <td>2001 - 2003</td>
+        <td><b>IBM UK Ltd./Lenovo UK Ltd</b><br>Greenock, (Scotland) UK</td>
+        <td class="job-title"><button>Resolution Owner</button></td>
+      </tr>
+    </tbody>
+  </table>
 </section>
 
-<!-- Modals -->
+<!-- Job Modals -->
 <div class="modal" id="job1">
-<div class="modal-content"><span class="close">&times;</span>
-<h4>Operations & Support Engineer</h4>
-<div class="meta">Dec 2022 - Present | Leipzig, Germany (Work from Home in Sri-Lanka)</div>
-<p>Providing technical support under the umbrella of ETL/ELT processes and virtualization of data by setting-up, configuring, troubleshooting and debugging various eCommerce REST API connectors; and JDBC Drivers from numerous data sources in a SaaS environment.<br><br>Advising, assisting, devising, troubleshooting and debugging SQL procedures and other scripts for clientele to help them retrieve their anticipated datasets.</p>
-</div>
+  <div class="modal-content"><span class="close">&times;</span>
+    <h4>Operations & Support Engineer</h4>
+    <div class="meta">Dec 2022 - Present | Leipzig, Germany (Work from Home in Sri-Lanka)</div>
+    <p>Providing technical support under the umbrella of ETL/ELT processes and virtualization of data by setting-up, configuring, troubleshooting and debugging various eCommerce REST API connectors; and JDBC Drivers from numerous data sources in a SaaS environment.<br><br>Advising, assisting, devising, troubleshooting and debugging SQL procedures and other scripts for clientele to help them retrieve their anticipated datasets.</p>
+  </div>
 </div>
 
 <div class="modal" id="job2">
-<div class="modal-content"><span class="close">&times;</span>
-<h4>Level 3 HelpDesk</h4>
-<div class="meta">Nov 2013 - Dec 2022 | Brussels, Belgium (Work from Home in Sri-Lanka)</div>
-<p>Helpdesk & Quality Assurance. Primary Role: B2B Helpdesk. Resolving & troubleshooting Odyssee SaaS solutions for customers. Incident Management – bug replication, documentation and escalation to Development. Interaction with Product Owners advocating customer's change requests. Database analytics – Querying in SQL to troubleshoot data problems. Secondary Role: Quality Assurance – checking User Interface for bugs on Android, Windows UWP & Website portal.</p>
-</div>
+  <div class="modal-content"><span class="close">&times;</span>
+    <h4>Level 3 HelpDesk</h4>
+    <div class="meta">Nov 2013 - Dec 2022 | Brussels, Belgium (Work from Home in Sri-Lanka)</div>
+    <p>Helpdesk & Quality Assurance. Primary Role: B2B Helpdesk. Resolving & troubleshooting Odyssee SaaS solutions for customers. Incident Management – bug replication, documentation and escalation to Development. Interaction with Product Owners advocating customer's change requests. Database analytics – Querying in SQL to troubleshoot data problems. Secondary Role: Quality Assurance – checking User Interface for bugs on Android, Windows UWP & Website portal.</p>
+  </div>
 </div>
 
 <div class="modal" id="job3">
-<div class="modal-content"><span class="close">&times;</span>
-<h4>Business Intelligence Systems Analyst</h4>
-<div class="meta">2008 - 2009 | Vienna, Austria</div>
-<p>Translating business needs into analytics/reporting requirements, and interfacing with internal team members to ensure successful delivery of BI reports from different departments.</p>
-</div>
+  <div class="modal-content"><span class="close">&times;</span>
+    <h4>Business Intelligence Systems Analyst</h4>
+    <div class="meta">2008 - 2009 | Vienna, Austria</div>
+    <p>Translating business needs into analytics/reporting requirements, and interfacing with internal team members to ensure successful delivery of BI reports from different departments.</p>
+  </div>
 </div>
 
 <div class="modal" id="job4">
-<div class="modal-content"><span class="close">&times;</span>
-<h4>Jr. Fraud & Risk Analyst</h4>
-<div class="meta">2006 - 2008 | Vienna, Austria</div>
-<p>B2C Gaming platform fraud and risk analytics of gaming clients for various payment platforms. Risk checks applied during online payments, implementation of anti-fraud and security solutions.</p>
-</div>
+  <div class="modal-content"><span class="close">&times;</span>
+    <h4>Jr. Fraud & Risk Analyst</h4>
+    <div class="meta">2006 - 2008 | Vienna, Austria</div>
+    <p>B2C Gaming platform fraud and risk analytics of gaming clients for various payment platforms. Risk checks applied during online payments, implementation of anti-fraud and security solutions.</p>
+  </div>
 </div>
 
 <div class="modal" id="job5">
-<div class="modal-content"><span class="close">&times;</span>
-<h4>Technical Support</h4>
-<div class="meta">2005 - 2006 | Vienna, Austria</div>
-<p>Providing customers with dedicated support & solutions on printing and fax devices as well as TV set-top-boxes.</p>
-</div>
+  <div class="modal-content"><span class="close">&times;</span>
+    <h4>Technical Support</h4>
+    <div class="meta">2005 - 2006 | Vienna, Austria</div>
+    <p>Providing customers with dedicated support & solutions on printing and fax devices as well as TV set-top-boxes.</p>
+  </div>
 </div>
 
 <div class="modal" id="job6">
-<div class="modal-content"><span class="close">&times;</span>
-<h4>Resolution Owner</h4>
-<div class="meta">2001 - 2003 | Greenock, Scotland</div>
-<p>Single-point-of-contact for clients who have been disappointed with IBM's performance. Duties included turning complaining clients into loyal IBM clients by being responsive and proactive.</p>
-</div>
+  <div class="modal-content"><span class="close">&times;</span>
+    <h4>Resolution Owner</h4>
+    <div class="meta">2001 - 2003 | Greenock, Scotland</div>
+    <p>Single-point-of-contact for clients who have been disappointed with IBM's performance. Duties included turning complaining clients into loyal IBM clients by being responsive and proactive.</p>
+  </div>
 </div>
 
 <hr>
 
 <!-- Education -->
 <section id="education">
-<h3>Education</h3>
-<table>
-<tbody>
-<tr>
-<td>1997-2001</td>
-<td><b>Johnson & Wales University</b> Providence, RI. USA</td>
-<td></td>
-<td>MBA in International Business<br>Bachelor of Science in Hotel/Restaurant Institutional Management</td>
-</tr>
-<tr>
-<td>1994-1996</td>
-<td><b>ICHM Modul</b> Vienna, Austria</td>
-<td></td>
-<td>Associate of Arts in Hospitality Management</td>
-</tr>
-<tr>
-<td>1982-1992</td>
-<td><b>Vienna International School</b> Vienna, Austria</td>
-<td></td>
-<td>International Baccalaureate\Matura</td>
-</tr>
-</tbody>
-</table>
+  <h3>Education</h3>
+  <table>
+    <tbody>
+      <tr>
+        <td>1997-2001</td>
+        <td><b>Johnson & Wales University</b> Providence, RI. USA</td>
+        <td></td>
+        <td>MBA in International Business<br>Bachelor of Science in Hotel/Restaurant Institutional Management</td>
+      </tr>
+      <tr>
+        <td>1994-1996</td>
+        <td><b>ICHM Modul</b> Vienna, Austria</td>
+        <td></td>
+        <td>Associate of Arts in Hospitality Management</td>
+      </tr>
+      <tr>
+        <td>1982-1992</td>
+        <td><b>Vienna International School</b> Vienna, Austria</td>
+        <td></td>
+        <td>International Baccalaureate\Matura</td>
+      </tr>
+    </tbody>
+  </table>
 </section>
 
 <!-- Skills -->
 <section id="skills">
-<h3>Skills & Certifications</h3>
-<div class="skills-grid">
-<div class="skill-card" style="background-color:#ADD8E6;"><b>Certification:</b> OCA Oracle Certified PL/SQL Developer</div>
-<div class="skill-card"><b>Applications:</b> Zendesk, Asana, Jira, Confluence, Slack, MS-Teams, Zoom, Office</div>
-<div class="skill-card"><b>OS/Environments/Languages:</b> SQL, Windows, Linux, SSH, WildFly, SSMS, Pycharm, AWS, Azure, HTML/CSS</div>
-<div class="skill-card"><b>Databases:</b> SQL Server, Snowflake, BigQuery, MySQL, MariaDB, PostgreSQL</div>
-</div>
+  <h3>Skills & Certifications</h3>
+  <div class="skills-grid">
+    <div class="skill-card" style="background-color:#ADD8E6;"><b>Certification:</b> OCA Oracle Certified PL/SQL Developer</div>
+    <div class="skill-card"><b>Applications:</b> Zendesk, Asana, Jira, Confluence, Slack, MS-Teams, Zoom, Office</div>
+    <div class="skill-card"><b>OS/Environments/Languages:</b> SQL, Windows, Linux, SSH, WildFly, SSMS, Pycharm, AWS, Azure, HTML/CSS</div>
+    <div class="skill-card"><b>Databases:</b> SQL Server, Snowflake, BigQuery, MySQL, MariaDB, PostgreSQL</div>
+  </div>
 </section>
 
 <!-- Languages -->
 <section id="languages">
-<h3>Languages</h3>
-<table>
-<tbody>
-<tr><td>English: Spoken & Written - Native</td><td>German: Spoken - Fluent, Written - Good</td></tr>
-</tbody>
-</table>
+  <h3>Languages</h3>
+  <table>
+    <tbody>
+      <tr><td>English: Spoken & Written - Native</td><td>German: Spoken - Fluent, Written - Good</td></tr>
+    </tbody>
+  </table>
 </section>
 
 <!-- Contact -->
 <section id="contact">
-<h3>Contact</h3>
-<p>Nationality: Austria<img src="images/austria.png" class="contact-img"> (European Union)<br>Currently based in Sri Lanka</p>
-<p>Phone: <a href="tel:+94766981521">+94 766981521</a></p>
-<p>Email: <a href="mailto:rt.ratnayake@gmail.com">rt.ratnayake@gmail.com</a></p>
+  <h3>Contact</h3>
+  <p>Nationality: Austria<img src="images/austria.png" class="contact-img"> (European Union)<br>Currently based in Sri Lanka</p>
+  <p>Phone: +94 766981521</p>
+  <p>Email: <a href="mailto:rt.ratnayake@gmail.com">rt.ratnayake@gmail.com</a></p>
 </section>
 
-<div class="photo-credit">Photo by <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pawel Czerwinski</a> on <a href="https://unsplash.com">Unsplash</a></div>
+<div class="photo-credit">Photo by <a href="https://unsplash.com/@pawel_czerwinski?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank">Pawel Czerwinski</a></div>
 
 <script>
-// Video reset
-const video = document.getElementById('introVideo');
-video.addEventListener('ended', () => { video.currentTime=0; video.pause(); video.load(); });
+  document.addEventListener("DOMContentLoaded", function() {
+    var modals = document.querySelectorAll(".modal");
+    var buttons = document.querySelectorAll(".job-title button");
+    var closes = document.querySelectorAll(".close");
 
-// Modal functionality
-const jobButtons = document.querySelectorAll('.job-row .job-title button');
-const modals = document.querySelectorAll('.modal');
-jobButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const jobId = button.closest('.job-row').dataset.job;
-        document.getElementById(jobId).style.display = 'block';
+    buttons.forEach(function(btn) {
+      btn.addEventListener("click", function() {
+        var jobId = this.closest(".job-row").dataset.job;
+        document.getElementById(jobId).style.display = "block";
+      });
     });
-});
-modals.forEach(modal => {
-    const close = modal.querySelector('.close');
-    close.addEventListener('click', () => { modal.style.display = 'none'; });
-    modal.addEventListener('click', e => { if(e.target === modal) modal.style.display = 'none'; });
-});
+
+    closes.forEach(function(close) {
+      close.addEventListener("click", function() {
+        this.closest(".modal").style.display = "none";
+      });
+    });
+
+    window.addEventListener("click", function(event) {
+      modals.forEach(function(modal) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+    });
+  });
+
+  const video = document.getElementById('introVideo');
+  video.addEventListener('ended', () => {
+    video.pause();
+    video.currentTime = 0;
+  });
 </script>
 
 </body>
