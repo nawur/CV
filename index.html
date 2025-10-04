@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
-    /* Modern font stack */
     body {
         font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif;
         margin: 0; padding: 0;
@@ -55,8 +54,8 @@
 
     .video-container { width:100%; text-align:center; margin:2rem auto; padding:1rem; }
     .styled-video {
-        width: 40%;
-        max-width: 500px;
+        width: 44%; /* 10% larger than original */
+        max-width: 550px;
         height: auto;
         border-radius: 12px;
         transition: transform 0.3s, box-shadow 0.3s;
@@ -81,7 +80,8 @@
     }
     nav a:hover { color:#1abc9c; transform:scale(1.05); text-decoration:underline; }
 
-    .photo-credit { position: fixed; bottom:0.5rem; right:0.5rem; background-color: rgba(255,255,255,0.5); padding:0.3rem 0.6rem; border-radius:5px; font-size:0.75rem; }
+    .photo-credit { position: fixed; bottom:0.5rem; left:0.5rem; background-color: rgba(255,255,255,0.4); padding:0.3rem 0.6rem; border-radius:5px; font-size:0.75rem; }
+
     .contact-img { vertical-align:middle; margin-left:0.5rem; width:20px; }
 
     .skills-grid { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:1rem; }
@@ -97,7 +97,7 @@
     @media screen and (max-width:768px){
         table { width:95%; margin:1rem auto;}
         nav a { display:block; margin:0.5rem 0; }
-        .styled-video { width: 80%; }
+        .styled-video { width: 88%; }
     }
 
     /* Modal Styles */
@@ -202,6 +202,7 @@
     <p>Providing technical support under the umbrella of ETL/ELT processes and virtualization of data by setting-up, configuring, troubleshooting and debugging various eCommerce REST API connectors; and JDBC Drivers from numerous data sources in a SaaS environment.<br><br>Advising, assisting, devising, troubleshooting and debugging SQL procedures and other scripts for clientele to help them retrieve their anticipated datasets.</p>
   </div>
 </div>
+
 <div class="modal" id="job2">
   <div class="modal-content"><span class="close">&times;</span>
     <h4>Level 3 HelpDesk</h4>
@@ -209,6 +210,7 @@
     <p>Helpdesk & Quality Assurance. Primary Role: B2B Helpdesk. Resolving & troubleshooting Odyssee SaaS solutions for customers. Incident Management – bug replication, documentation and escalation to Development. Interaction with Product Owners advocating customer's change requests. Database analytics – Querying in SQL to troubleshoot data problems. Secondary Role: Quality Assurance – checking User Interface for bugs on Android, Windows UWP & Website portal.</p>
   </div>
 </div>
+
 <div class="modal" id="job3">
   <div class="modal-content"><span class="close">&times;</span>
     <h4>Business Intelligence Systems Analyst</h4>
@@ -216,6 +218,7 @@
     <p>Translating business needs into analytics/reporting requirements, and interfacing with internal team members to ensure successful delivery of BI reports from different departments.</p>
   </div>
 </div>
+
 <div class="modal" id="job4">
   <div class="modal-content"><span class="close">&times;</span>
     <h4>Jr. Fraud & Risk Analyst</h4>
@@ -223,6 +226,7 @@
     <p>B2C Gaming platform fraud and risk analytics of gaming clients for various payment platforms. Risk checks applied during online payments, implementation of anti-fraud and security solutions.</p>
   </div>
 </div>
+
 <div class="modal" id="job5">
   <div class="modal-content"><span class="close">&times;</span>
     <h4>Technical Support</h4>
@@ -230,6 +234,7 @@
     <p>Providing customers with dedicated support & solutions on printing and fax devices as well as TV set-top-boxes.</p>
   </div>
 </div>
+
 <div class="modal" id="job6">
   <div class="modal-content"><span class="close">&times;</span>
     <h4>Resolution Owner</h4>
@@ -300,42 +305,10 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    // Modal logic
     var modals = document.querySelectorAll(".modal");
     var buttons = document.querySelectorAll(".job-title button");
     var closes = document.querySelectorAll(".close");
 
     buttons.forEach(function(btn) {
       btn.addEventListener("click", function() {
-        var jobId = this.closest(".job-row").dataset.job;
-        document.getElementById(jobId).style.display = "block";
-      });
-    });
-
-    closes.forEach(function(close) {
-      close.addEventListener("click", function() {
-        this.closest(".modal").style.display = "none";
-      });
-    });
-
-    window.addEventListener("click", function(event) {
-      modals.forEach(function(modal) {
-        if (event.target == modal) { modal.style.display = "none"; }
-      });
-    });
-
-    // Video reset logic
-    const video = document.getElementById('introVideo');
-    const poster = video.getAttribute('poster');
-
-    video.addEventListener('ended', () => {
-        video.pause();
-        video.currentTime = 0;
-        video.load(); // reload to show poster
-        video.setAttribute('poster', poster);
-    });
-});
-</script>
-
-</body>
-</html>
+       
