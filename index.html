@@ -41,22 +41,25 @@ td.job-title button:hover {
 
 .video-container { width:100%; text-align:center; margin:2rem auto; border-radius:10px; background-color: rgba(255,255,255,0.2); padding:1rem; }
 video { max-width:50%; height:auto; border-radius:8px; }
+
 .header-section { padding:1rem; text-align:center;}
-.header-section h1 {margin:0; font-weight:bold; text-align:right; font-size:2.5rem;}
-.header-section p {margin:0.3rem 0 0 0; font-size:1.1rem; color:#555; text-align:right;}
 .header-nav-container { position:sticky; top:0; z-index:1000; background-color: rgba(255,255,255,0.3); border-radius:8px; margin:0.2rem; }
 nav { text-align:center; padding:0.5rem; backdrop-filter:blur(5px); }
 nav a { margin:0 1rem; color:#2c3e50; text-decoration:none; font-weight:bold; transition: color 0.3s, transform 0.3s; }
 nav a:hover { color:#1abc9c; transform:scale(1.05); text-decoration:underline; }
+
 .photo-credit { position: fixed; bottom:0.5rem; right:0.5rem; background-color: rgba(255,255,255,0.5); padding:0.3rem 0.6rem; border-radius:5px; font-size:0.75rem; }
 .contact-img { vertical-align:middle; margin-left:0.5rem; width:20px; }
+
 .skills-grid { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:1rem; }
 .skill-card { background: rgba(255,255,255,0.3); padding:1rem; border-radius:8px; flex:1 1 220px; max-width:300px; transition: transform 0.3s, box-shadow 0.3s;}
 .skill-card:hover { transform: scale(1.03); box-shadow:0 4px 12px rgba(0,0,0,0.15);}
 .skill-card b { display:block; margin-bottom:0.5rem; }
+
 section { max-width:1200px; margin:2rem auto; padding:0 1rem; text-align:left; }
 section h3 { text-align:left; }
 #languages table { text-align:center; margin:auto; }
+
 @media screen and (max-width:768px){ table { width:95%; margin:1rem auto;} nav a { display:block; margin:0.5rem 0; } }
 
 /* Modal Styles */
@@ -102,8 +105,26 @@ section h3 { text-align:left; }
 
 <div class="header-nav-container">
 <header class="header-section">
-<h1>ruwan.ratnayake</h1>
-<p>Operations & Support Engineer</p>
+  <div style="display:flex; justify-content:space-between; align-items:center;">
+    <!-- Download CV button -->
+    <a href="Ruwan Ratnayake - CV.pdf" download style="
+        padding: 0.5rem 1rem;
+        background-color: #1abc9c;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: background 0.3s, transform 0.2s;
+    " onmouseover="this.style.background='#16a085';" onmouseout="this.style.background='#1abc9c';">
+      Download CV
+    </a>
+
+    <!-- Name and title -->
+    <div style="text-align:right;">
+      <h1 style="margin:0; font-weight:bold; font-size:2.5rem;">ruwan.ratnayake</h1>
+      <p style="margin:0.3rem 0 0 0; font-size:1.1rem; color:#555;">Operations & Support Engineer</p>
+    </div>
+  </div>
 </header>
 <nav>
 <a href="#about">Video</a>
@@ -285,4 +306,3 @@ modals.forEach(modal => {
 
 </body>
 </html>
-
