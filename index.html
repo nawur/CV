@@ -26,14 +26,34 @@
     table { width:100%; max-width:1200px; margin:2rem auto; border-collapse:collapse; background-color: rgba(255,255,255,0.3); border-radius:8px; text-align:left; }
     td { vertical-align: top; padding:1rem 1.2rem; font-size:1rem; }
     td.job-title { text-align: left; }
-    td.job-title button {
-        font-family: 'Poppins', sans-serif; font-weight: 600; cursor: pointer; padding: 0.4rem 0.8rem;
-        background: #1abc9c; color: #fff; border: none; border-radius: 6px; text-align: center; font-size: 1rem;
-        letter-spacing: 0.3px; transition: background 0.3s, transform 0.2s;
-    }
-    td.job-title button:hover { background: #16a085; transform: scale(1.05); }
 
-    /* Video container and premium hover effect */
+    /* Buttons: Light purple, dark purple on click */
+    td.job-title button,
+    .header-section a {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        cursor: pointer;
+        padding: 0.4rem 0.8rem;
+        background: #C8A2C8;  /* Light purple */
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        text-align: center;
+        font-size: 1rem;
+        letter-spacing: 0.3px;
+        transition: background 0.3s, transform 0.2s;
+    }
+    td.job-title button:hover,
+    .header-section a:hover {
+        background: #B188B1; /* Slightly darker on hover */
+        transform: scale(1.05);
+    }
+    td.job-title button:active,
+    .header-section a:active {
+        background: #6A0DAD; /* Dark purple */
+    }
+
+    /* Video container and smooth hover effect */
     .video-container { width:100%; text-align:center; margin:2rem auto; }
     .video-container video {
         max-width:55%; 
@@ -80,12 +100,7 @@
 <div class="header-nav-container">
   <header class="header-section">
     <div style="display:flex; justify-content:space-between; align-items:center;">
-      <a href="Ruwan Ratnayake - CV.pdf" download 
-         style=" padding: 0.5rem 1rem; background-color: #1abc9c; color: #fff; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.3s, transform 0.2s; "
-         onmouseover="this.style.background='#16a085';" 
-         onmouseout="this.style.background='#1abc9c';">
-         Download CV
-      </a>
+      <a href="Ruwan Ratnayake - CV.pdf" download>Download CV</a>
       <div style="text-align:right;">
         <h1 style="margin:0;">ruwan.ratnayake</h1>
         <p style="margin:0.3rem 0 0 0; font-size:1.1rem; color:#555;">Operations & Support Engineer</p>
