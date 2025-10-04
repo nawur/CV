@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,11 +69,44 @@
       filter: drop-shadow(0 0 15px rgba(26, 188, 156, 0.5));
   }
 
-  .header-section { padding:1rem; text-align:center; }
-  .header-nav-container { position:sticky; top:0; z-index:1000; background-color: rgba(255,255,255,0.1); border-radius:8px; margin:0.2rem; }
-  nav { text-align:center; padding:0.5rem; backdrop-filter:blur(5px); }
-  nav a { margin:0 1rem; color:#2c3e50; text-decoration:none; font-weight:500; letter-spacing: 0.3px; transition: color 0.3s, transform 0.3s; }
-  nav a:hover { color:#1abc9c; transform:scale(1.05); text-decoration:underline; }
+  /* Vertical navigation & header layout */
+  .header-nav-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 8px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    backdrop-filter: blur(5px);
+  }
+
+  nav a {
+    margin: 0.5rem 0;
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: color 0.3s, transform 0.3s;
+  }
+
+  nav a:hover {
+    color: #1abc9c;
+    transform: scale(1.05);
+    text-decoration: underline;
+  }
+
+  .header-section { text-align:left; }
+  .header-section a { margin-bottom: 1rem; display:inline-block; }
 
   .photo-credit { position: fixed; bottom:0.5rem; right:0.5rem; background-color: rgba(255,255,255,0.5); padding:0.3rem 0.6rem; border-radius:5px; font-size:0.75rem; }
   .contact-img { vertical-align:middle; margin-left:0.5rem; width:20px; }
@@ -86,7 +118,13 @@
   section h3 { text-align:left; }
   #languages table { text-align:center; margin:auto; }
   #languages b { font-weight: bold; }
-  @media screen and (max-width:768px){ table { width:95%; margin:1rem auto;} nav a { display:block; margin:0.5rem 0; } }
+
+  @media screen and (max-width:768px){
+    .header-nav-container { flex-direction: column; align-items:center; }
+    nav { flex-direction: row; justify-content:center; flex-wrap:wrap; }
+    nav a { margin:0.5rem 1rem; }
+    table { width:95%; margin:1rem auto;}
+  }
 
   .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background: rgba(0,0,0,0.6); animation: fadeIn 0.3s; }
   .modal-content { background-color: rgba(255,255,255,0.95); margin: 10% auto; padding: 2rem; border-radius: 10px; width: 90%; max-width: 600px; text-align: left; color: #111; text-shadow: 0 1px 2px rgba(0,0,0,0.2); animation: slideDown 0.3s ease; position: relative; }
@@ -101,16 +139,6 @@
 <body>
 
 <div class="header-nav-container">
-  <header class="header-section">
-    <div style="display:flex; justify-content:space-between; align-items:center;">
-      <a href="Ruwan Ratnayake - CV.pdf" download>Download CV</a>
-      <div style="text-align:right;">
-        <h1 style="margin:0;">ruwan.ratnayake</h1>
-        <p style="margin:0.3rem 0 0 0; font-size:1.1rem; color:#555;">Operations & Support Engineer</p>
-      </div>
-    </div>
-  </header>
-
   <nav>
     <a href="#about">Video</a>
     <a href="#experience">Work Experience</a>
@@ -119,6 +147,12 @@
     <a href="#languages">Languages</a>
     <a href="#contact">Contact</a>
   </nav>
+
+  <header class="header-section">
+    <a href="Ruwan Ratnayake - CV.pdf" download>Download CV</a>
+    <h1 style="margin:0;">ruwan.ratnayake</h1>
+    <p style="margin:0.3rem 0 0 0; font-size:1.1rem; color:#555;">Operations & Support Engineer</p>
+  </header>
 </div>
 
 <!-- About -->
