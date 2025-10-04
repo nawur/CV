@@ -33,7 +33,19 @@
     }
     td.job-title button:hover { background: #16a085; transform: scale(1.05); }
     .video-container { width:100%; text-align:center; margin:2rem auto; border-radius:10px; background-color: rgba(255,255,255,0.2); padding:1rem; }
-    video { max-width:55%; height:auto; border-radius:8px; } /* increased by 10% */
+    
+    /* Video hover zoom with shadow */
+    .video-container video {
+        max-width:55%; 
+        height:auto; 
+        border-radius:8px; 
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .video-container video:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
     .header-section { padding:1rem; text-align:center; }
     .header-nav-container { position:sticky; top:0; z-index:1000; background-color: rgba(255,255,255,0.1); border-radius:8px; margin:0.2rem; }
     nav { text-align:center; padding:0.5rem; backdrop-filter:blur(5px); }
@@ -288,4 +300,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </body>
 </html>
-
