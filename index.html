@@ -12,7 +12,18 @@ body {
     background-size: cover;
     color: #333;
     scroll-behavior: smooth;
+    position: relative;
 }
+
+/* Grey overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4); /* grey overlay */
+    z-index: -1;
+}
+
 h2,h3 {color:#2c3e50;}
 hr {border:0; border-top:1px solid #ccc; margin:2rem 0;}
 table { width:100%; max-width:1200px; margin:2rem auto; border-collapse:collapse; background-color: rgba(255,255,255,0.3); border-radius:8px; text-align:left; }
@@ -63,11 +74,19 @@ nav a:hover { color:#1abc9c; transform:scale(1.05); text-decoration:underline; }
 .skill-card:hover { transform: scale(1.03); box-shadow:0 4px 12px rgba(0,0,0,0.15);}
 .skill-card b { display:block; margin-bottom:0.5rem; }
 
-section { max-width:1200px; margin:2rem auto; padding:0 1rem; text-align:left; }
+section { 
+    max-width:1200px; 
+    margin:3rem auto;  /* more breathing space */
+    padding:0 1.5rem; 
+    text-align:left; 
+}
 section h3 { text-align:left; }
 #languages table { text-align:center; margin:auto; }
 
-@media screen and (max-width:768px){ table { width:95%; margin:1rem auto;} nav a { display:block; margin:0.5rem 0; } }
+@media screen and (max-width:768px){ 
+    table { width:95%; margin:1rem auto;} 
+    nav a { display:block; margin:0.5rem 0; } 
+}
 
 /* Modal Styles */
 .modal {
@@ -129,7 +148,7 @@ section h3 { text-align:left; }
     <!-- Name and title -->
     <div style="text-align:right;">
       <h1 style="margin:0; font-weight:bold; font-size:2.5rem;">ruwan.ratnayake</h1>
-      <p style="margin:0.3rem 0 0 0; font-size:1.1rem; color:#555;">Operations & Support Engineer</p>
+      <p style="margin:0.3rem 0 0 0; font-size:1.1rem; color:#eee;">Operations & Support Engineer</p>
     </div>
   </div>
 </header>
@@ -145,7 +164,7 @@ section h3 { text-align:left; }
 
 <!-- About -->
 <section id="about" style="text-align:center;">
-<p style="text-align:center; font-size:1.2rem; font-weight:500;">I am a dedicated Operations & Support Engineer with over 10 years of customer success experience on various SaaS platforms.</p>
+<p style="text-align:center; font-size:1.2rem; font-weight:500; color:#f5f5f5;">I am a dedicated Operations & Support Engineer with over 10 years of customer success experience on various SaaS platforms.</p>
 <div class="video-container">
 <h3>Video Intro: 1 min</h3>
 <video id="introVideo" width="100%" controls preload="auto" poster="thumbnail_2.png">
@@ -158,7 +177,7 @@ Your browser does not support the video tag.
 
 <!-- Work Experience -->
 <section id="experience">
-<h3>Work Experience <span style="font-size:0.9rem; font-weight:normal; color:#555;">(Click buttons to view job description)</span></h3>
+<h3>Work Experience <span style="font-size:0.9rem; font-weight:normal; color:#ddd;">(Click buttons to view job description)</span></h3>
 <table>
 <tbody>
 <tr class="job-row" data-job="job1">
@@ -298,7 +317,7 @@ Your browser does not support the video tag.
 <section id="contact">
 <h3>Contact</h3>
 <p>Nationality: Austria<img src="images/austria.png" class="contact-img"> (European Union)<br>Currently based in Sri Lanka</p>
-<p>Phone: +94 766981521</p>
+<p>Phone: <a href="tel:+94766981521">+94 766981521</a></p>
 <p>Email: <a href="mailto:rt.ratnayake@gmail.com">rt.ratnayake@gmail.com</a></p>
 </section>
 
