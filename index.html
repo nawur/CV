@@ -361,53 +361,52 @@ document.querySelectorAll('td.job-title button').forEach(btn => {
   btn.addEventListener('click', () => {
     const id = btn.closest('tr').dataset.job;
     const modal = document.getElementById(id);
-    if (modal) {
+    if (!modal) return;
+
+    // Make sure all other modals are hidden first
+    document.querySelectorAll('.modal').forEach(m => (m.style.display = 'none'));
+
+    // Small delay ensures consistent re-triggering
+    setTimeout(() => {
       modal.style.display = 'block';
-      document.body.style.overflow = 'hidden'; // prevent background scroll
-    }
+    }, 50);
   });
 });
 
+// Close button
 document.querySelectorAll('.close').forEach(span => {
   span.addEventListener('click', () => {
-    const modal = span.closest('.modal');
-    modal.style.display = 'none';
-    document.body.style.overflow = ''; // restore scroll
+    span.closest('.modal').style.display = 'none';
   });
 });
 
+// Click outside modal to close
 window.addEventListener('click', event => {
   if (event.target.classList.contains('modal')) {
     event.target.style.display = 'none';
-    document.body.style.overflow = '';
   }
 });
 
-
-// Video reset
+// Video end fade-out and poster restore
 const video = document.getElementById('introVideo');
 const poster = video.getAttribute('poster');
 
-// Smooth cinematic fade-out and restore poster
 video.addEventListener('ended', () => {
   video.pause();
-
-  // Fade out the final frame
   video.style.opacity = 0;
-
-  // After fade completes, reset and fade poster in
   setTimeout(() => {
     video.currentTime = 0;
     video.setAttribute('poster', poster);
-    video.load(); // Reloads poster only
-    video.style.opacity = 1; // Fade back in
-  }, 800); // Match duration of CSS transition
+    video.load();
+    video.style.opacity = 1;
+  }, 800);
 });
-
 </script>
+
 
 </body>
 </html>
+
 
 
 
