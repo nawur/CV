@@ -54,19 +54,28 @@ td.job-title button:active,
     background: #001433;
 }
 
-/* Video container */
-.video-container { width:100%; text-align:center; margin:2rem auto; }
-.video-container video {
-    max-width:55%; 
-    height:auto; 
-    border-radius:8px; 
-    transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
-    display:inline-block;
+.video-container {
+    width: 100%;
+    text-align: center;
+    margin: 2rem auto;
+    position: relative;
+    z-index: 1;
 }
+
+.video-container video {
+    max-width: 55%;
+    height: auto;
+    border-radius: 8px;
+    transition: box-shadow 0.5s ease, filter 0.5s ease;
+    display: inline-block;
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* Softer hover without transform */
 .video-container video:hover {
-    transform: scale(1.06) translateY(-6px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
-    filter: drop-shadow(0 0 15px rgba(26, 188, 156, 0.5));
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    filter: drop-shadow(0 0 10px rgba(26, 188, 156, 0.4));
 }
 
 /* Sticky header */
@@ -362,16 +371,19 @@ window.onclick = function(event) {
 // Video reset
 const video = document.getElementById('introVideo');
 const poster = video.getAttribute('poster');
+
 video.addEventListener('ended', () => {
-  
+  video.pause();
   video.currentTime = 0;
-    video.pause();               
   video.setAttribute('poster', poster);
+
+
 });
 </script>
 
 </body>
 </html>
+
 
 
 
