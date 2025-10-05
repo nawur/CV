@@ -53,6 +53,9 @@ td.job-title button:active,
 .header-section a:active {
     background: #001433;
 }
+#introVideo {
+  transition: opacity 0.8s ease; /* Smooth fade effect */
+}
 
 .video-container {
     width: 100%;
@@ -372,17 +375,27 @@ window.onclick = function(event) {
 const video = document.getElementById('introVideo');
 const poster = video.getAttribute('poster');
 
+// Smooth cinematic fade-out and restore poster
 video.addEventListener('ended', () => {
   video.pause();
-  video.currentTime = 0;
-  video.setAttribute('poster', poster);
 
+  // Fade out the final frame
+  video.style.opacity = 0;
 
+  // After fade completes, reset and fade poster in
+  setTimeout(() => {
+    video.currentTime = 0;
+    video.setAttribute('poster', poster);
+    video.load(); // Reloads poster only
+    video.style.opacity = 1; // Fade back in
+  }, 800); // Match duration of CSS transition
 });
+
 </script>
 
 </body>
 </html>
+
 
 
 
