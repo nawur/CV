@@ -93,6 +93,31 @@ td.job-title button:active,
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
     filter: drop-shadow(0 0 10px rgba(26, 188, 156, 0.4));
 }
+  /* Match Contact button to job title buttons */
+.contact-btn {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.4rem 0.8rem;
+  background: #004080;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.contact-btn:hover {
+  background: #00264d;
+  transform: scale(1.05);
+}
+
+.contact-btn:active {
+  background: #001433;
+}
+
 
 /* Sticky header */
 .header-section {
@@ -363,16 +388,20 @@ section {
 
 <!-- Contact -->
   <!-- Contact Section -->
-<section id="contact"; margin:3rem 0;">
+<!-- Contact -->
+<section id="contact" style="margin:3rem 0">
   <h3>Contact</h3>
-  <p>Nationality: Austria<img src="images/austria.png" class="contact-img"> (European Union)<br>Currently based in Sri Lanka</p>
-  <br>Phone: +94 766981521</p>
+  <p>
+    Nationality: Austria <img src="images/austria.png" class="contact-img"> (European Union)<br>
+    Currently based in Sri Lanka
+  </p>
+  <p>Phone: +94 766981521</p>
   <p>If you’d like to reach out, feel free to email me directly.</p>
-  
-    <button class="job-title" onclick="window.location.href='mailto:rt.ratnayake@gmail.com'"
-      >📧 Contact Me</button>
 
-  
+  <!-- ✅ Same look as job title buttons -->
+  <button class="contact-btn" onclick="window.location.href='mailto:rt.ratnayake@gmail.com'">
+    📧 Contact Me
+  </button>
 </section>
 <footer>
     <p>© 2025 Ruwan Ratnayake</p>
@@ -436,6 +465,7 @@ video.addEventListener('ended', () => {
 
 </body>
 </html>
+
 
 
 
