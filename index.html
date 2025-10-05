@@ -56,6 +56,11 @@ td.job-title button:active,
 #introVideo {
   transition: opacity 0.8s ease; /* Smooth fade effect */
 }
+  table td button {
+  position: relative;
+  z-index: 2;
+}
+
 
 .video-container {
     width: 100%;
@@ -352,24 +357,32 @@ section {
 
 
 <script>
-document.querySelectorAll('td.job-title button').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
+document.querySelectorAll('td.job-title button').forEach(btn => {
+  btn.addEventListener('click', () => {
     const id = btn.closest('tr').dataset.job;
-    document.getElementById(id).style.display='block';
+    const modal = document.getElementById(id);
+    if (modal) {
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden'; // prevent background scroll
+    }
   });
 });
 
-document.querySelectorAll('.close').forEach(span=>{
-  span.addEventListener('click', ()=>{
-    span.closest('.modal').style.display='none';
+document.querySelectorAll('.close').forEach(span => {
+  span.addEventListener('click', () => {
+    const modal = span.closest('.modal');
+    modal.style.display = 'none';
+    document.body.style.overflow = ''; // restore scroll
   });
 });
 
-window.onclick = function(event) {
-  if(event.target.classList.contains('modal')) {
-    event.target.style.display='none';
+window.addEventListener('click', event => {
+  if (event.target.classList.contains('modal')) {
+    event.target.style.display = 'none';
+    document.body.style.overflow = '';
   }
-};
+});
+
 
 // Video reset
 const video = document.getElementById('introVideo');
@@ -395,6 +408,7 @@ video.addEventListener('ended', () => {
 
 </body>
 </html>
+
 
 
 
