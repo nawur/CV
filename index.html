@@ -363,14 +363,15 @@ window.onclick = function(event) {
 const video = document.getElementById('introVideo');
 const poster = video.getAttribute('poster');
 video.addEventListener('ended', () => {
-  video.pause();
+  
   video.currentTime = 0;
-  video.load();                  
+    video.pause();               
   video.setAttribute('poster', poster);
 });
 </script>
 
 </body>
 </html>
+
 
 
