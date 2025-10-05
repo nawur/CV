@@ -362,16 +362,34 @@ section {
 </section>
 
 <!-- Contact -->
-<section id="contact">
+  <!-- Contact Section -->
+<section id="contact" style="text-align:center; margin:3rem 0;">
   <h3>Contact</h3>
   <p>Nationality: Austria<img src="images/austria.png" class="contact-img"> (European Union)<br>Currently based in Sri Lanka</p>
   <p>Phone: +94 766981521</p>
-
-  <button onclick="window.location.href='mailto:rt.ratnayake@gmail.com'">
-  📧 Contact Me
-</button>
-
+  <p>If you’d like to reach out, feel free to email me directly.</p>
+  <button
+    onclick="window.location.href='mailto:rt.ratnayake@gmail.com'"
+    style="
+      background-color: #0056b3;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    "
+    onmouseover="this.style.backgroundColor='#003f7f'"
+    onmouseout="this.style.backgroundColor='#0056b3'"
+  >
+    📧 Contact Me
+  </button>
 </section>
+
+
+
+
 
 
 <div class="photo-credit">Photo by <a href="https://unsplash.com/@pawel_czerwinski">Pawel Czerwinski</a> on <a href="https://unsplash.com">Unsplash</a></div>
@@ -427,6 +445,7 @@ video.addEventListener('ended', () => {
 
 </body>
 </html>
+
 
 
 
